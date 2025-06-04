@@ -1,3 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("CV site loaded.");
+// Init AOS (Animate On Scroll)
+AOS.init({
+  duration: 1000,
+  once: true,
 });
