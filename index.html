@@ -2,210 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ankit Prasad Kandel - Portfolio</title>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
     }
-
-    .hero-section {
-      background: linear-gradient(135deg, #0d6efd, #6c757d);
-      padding: 4rem 0;
-    }
-
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border: 4px solid #fff;
-    }
-
-    h2 {
-      font-weight: 700;
-      color: #0d6efd;
-    }
-
-    .card-title {
-      color: #0d6efd;
-    }
-
-    footer {
-      background-color: #212529;
-    }
-
-    a {
-      color: #0d6efd;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
+    header {
+      background-color: #343a40;
       color: #fff;
     }
-
-    .navbar-dark .navbar-nav .nav-link:hover {
-      color: #adb5bd;
+    header h1 {
+      margin: 0;
+      padding: 1rem 0;
+    }
+    section h2 {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="#">Ankit Kandel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header class="text-center py-4">
+  <h1>Ankit Prasad Kandel</h1>
+  <p>Computing Science Graduate | Software Developer | Cloud Engineer</p>
+</header>
 
-  <header class="hero-section text-center text-white">
-    <div class="container">
-      <img src="Prakasad.jpeg" alt="Ankit Prasad Kandel" class="rounded-circle profile-img mb-3">
-      <h1 class="display-4">Ankit Prasad Kandel</h1>
-      <p class="lead">Computing Science Student | Software Developer | Cloud Enthusiast</p>
-      <a href="mailto:akandel599@gmail.com" class="btn btn-outline-light m-2">Email Me</a>
-      <a href="https://wa.me/447436598943" target="_blank" class="btn btn-success m-2">
-        <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-      </a>
-    </div>
-  </header>
+<section class="container py-5" id="about">
+  <h2>About Me</h2>
+  <p>
+    First Class Honours Computing Science student graduating in July 2025 with proven expertise in software development, full-stack engineering, and cloud computing. Adept at designing scalable systems and user-focused applications using Java, Spring Boot, React.js, Python, and Azure. Awarded the Ulster University Excel Edge Award for excellence in employability and skills development. Known for Agile teamwork, leadership, and delivering impactful software solutions through academic and industry experience.
+  </p>
+</section>
 
-  <section class="container py-5" id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>Results-oriented Computing Science student with experience in software development, full-stack engineering, and cloud-native solutions. Proficient in Java, Spring Boot, React.js, Python, and Azure with strong leadership and Agile development experience.</p>
-  </section>
+<section class="container py-5" id="education">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>BSc (Hons) Computing Science – First Class Honours (73%)</strong>, Ulster University, Belfast (Sep 2021 – Jul 2025)
+      <ul>
+        <li>Year 4: Cloud Computing, Full Stack Development, Artificial Intelligence, Enterprise Network, Computing Project</li>
+        <li>Year 3: Professional Practice Computing</li>
+        <li>Year 2: Software Development, Web App Development, Networking, Security, Mathematics, Algorithms and Data Structures</li>
+        <li>Year 1: Python, Java, Databases, Web Authoring, Systems Software, Computer Technology</li>
+      </ul>
+      <strong>Award:</strong> Ulster University Excel Edge Award (2025)
+    </li>
+    <li><strong>+2 Qualification</strong>, Gaindakot Namuna Secondary School, NEB (2017–2020)
+      <ul>
+        <li>Computer Science: A+, Physics: B+, Chemistry: B+, Mathematics: B</li>
+      </ul>
+    </li>
+  </ul>
+</section>
 
-  <section class="container py-5" id="education" data-aos="fade-up">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>BSc Hons Computing Science</strong>, Ulster University (2021–2025)</li>
-      <li>Modules: Python, Java, Web Development, Networks, AI, Cloud, Full Stack</li>
-    </ul>
-  </section>
+<section class="container py-5" id="experience">
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>Software Developer & IT Systems Engineer – Direct Medics</strong>, Belfast (Jul 2023 – Jul 2024)
+      <ul>
+        <li>Designed and maintained web apps and automation tools</li>
+        <li>Built SQL/Azure databases for digital transformation</li>
+        <li>Led UI/UX redesign projects and deployed solutions to cloud</li>
+        <li>Delivered documentation and end-user deployment training</li>
+      </ul>
+    </li>
+    <li><strong>Front of House Manager – Yaks Nepalese & Indian Restaurant</strong>, Bangor (Oct 2021 – Present)
+      <ul>
+        <li>Managed front-of-house team, training, and guest experience</li>
+        <li>Contributed to restaurant's #1 local ranking</li>
+      </ul>
+    </li>
+    <li><strong>Computer Science Teacher – New Life Boarding Secondary School</strong>, Nepal (Dec 2019 – Jun 2021)
+      <ul>
+        <li>Taught computer basics, internet safety, digital literacy</li>
+        <li>Organized ICT quizzes, competitions, and tech activities</li>
+      </ul>
+    </li>
+  </ul>
+</section>
 
-  <section class="container py-5" id="projects" data-aos="fade-up">
-    <h2>Major Projects</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h5 class="card-title">Multi-Restaurant Food Delivery System</h5>
-            <p class="card-text">Spring Boot & React, Google Maps API, PayPal</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h5 class="card-title">Travel Gram</h5>
-            <p class="card-text">Azure-based, 10,000+ users, real-time sharing</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h5 class="card-title">Restaurant Booking System</h5>
-            <p class="card-text">Angular + Flask</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h5 class="card-title">Sports Leaderboard Website</h5>
-            <p class="card-text">HTML, CSS, jQuery</p>
-          </div>
+<section class="container py-5" id="projects">
+  <h2>Major Projects</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Photo Gallery Web App</h5>
+          <p class="card-text">PHP Laravel Breeze, user comments, admin controls</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="container py-5" id="experience" data-aos="fade-up">
-    <h2>Employment History</h2>
-    <ul>
-      <li><strong>Software Developer, Direct Medics</strong> (2023–2024)
-        <ul>
-          <li>Developed web apps and backend systems on Azure</li>
-          <li>UI/UX redesign, technical documentation</li>
-        </ul>
-      </li>
-      <li><strong>Assistant Manager, Yaks Nepalese Restaurant</strong> (2021–Present)
-        <ul>
-          <li>Managed operations, social media, and cost control</li>
-        </ul>
-      </li>
-      <li><strong>Computer Science Teacher</strong> (2019–2021)
-        <ul>
-          <li>Taught digital literacy, conducted ICT activities</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-
-  <section class="container py-5" id="skills" data-aos="fade-up">
-    <h2>Skills</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <ul>
-          <li><i class="bi bi-code-slash"></i> Languages: Java, Python, PHP</li>
-          <li><i class="bi bi-box-seam"></i> Frameworks: Spring Boot, React.js, Angular</li>
-          <li><i class="bi bi-cloud"></i> Cloud: Azure (Blob Storage, Logic Apps, Cosmos DB)</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul>
-          <li><i class="bi bi-shield-lock"></i> Cybersecurity: Access Control, Threat Analysis</li>
-          <li><i class="bi bi-people"></i> Soft Skills: Teamwork, Time Management, Problem Solving</li>
-        </ul>
+    <div class="col-md-6 mb-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Python Data Manager</h5>
+          <p class="card-text">Data read/store/visualize with user input logic</p>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="col-md-6 mb-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Java Desktop Streak Game</h5>
+          <p class="card-text">Single/dual-player, high score tracking</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Enterprise Network Project</h5>
+          <p class="card-text">Routing, switching, security, and subnetting using Cisco Packet Tracer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="container py-5" id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p><i class="bi bi-envelope"></i> Email: <a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a></p>
-    <p><i class="bi bi-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank">Visit Profile</a></p>
-  </section>
+<section class="container py-5" id="skills">
+  <h2>Skills</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <ul>
+        <li><i class="bi bi-code-slash"></i> Java, Python, JavaScript, PHP</li>
+        <li><i class="bi bi-box"></i> Spring Boot, React.js, Angular, Flask</li>
+        <li><i class="bi bi-database"></i> SQL, PostgreSQL</li>
+        <li><i class="bi bi-cloud"></i> Azure (Blob Storage, Cosmos DB), AWS</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul>
+        <li><i class="bi bi-tools"></i> Git, GitHub, Docker, Postman</li>
+        <li><i class="bi bi-shield-check"></i> Threat Analysis, Access Control</li>
+        <li><i class="bi bi-brain"></i> AI with Python, Data Structures</li>
+        <li><i class="bi bi-people"></i> Teamwork, Leadership, Communication</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <footer class="text-center py-4 text-white">
-    <p>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</p>
-  </footer>
+<section class="container py-5" id="certifications">
+  <h2>Certifications</h2>
+  <ul>
+    <li>IBM Full Stack Software Developer – IBM</li>
+    <li>Application Development using Microservices and Serverless – IBM</li>
+    <li>Advanced Python Projects – LinkedIn Learning</li>
+    <li>AWS Cloud Practitioner Essentials – AWS</li>
+    <li>Career Essentials in GitHub – GitHub</li>
+    <li>Docker Foundations Certificate – Docker, Inc.</li>
+  </ul>
+</section>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+<footer>
+  <p>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
