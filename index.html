@@ -2,30 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ankit Prasad Kandel - Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
   <style>
-    html {
-      scroll-behavior: smooth;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
     }
-    section {
-      padding-top: 80px;
+
+    .hero-section {
+      background: linear-gradient(135deg, #0d6efd, #6c757d);
+      padding: 4rem 0;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 4px solid #fff;
+    }
+
+    h2 {
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    .card-title {
+      color: #0d6efd;
+    }
+
+    footer {
+      background-color: #212529;
+    }
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #adb5bd;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#">Ankit Prasad Kandel</a>
+      <a class="navbar-brand" href="#">Ankit Kandel</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
@@ -36,128 +87,125 @@
     </div>
   </nav>
 
-  <!-- Profile -->
-  <section id="profile" class="container py-5">
+  <header class="hero-section text-center text-white">
+    <div class="container">
+      <img src="Prakasad.jpeg" alt="Ankit Prasad Kandel" class="rounded-circle profile-img mb-3">
+      <h1 class="display-4">Ankit Prasad Kandel</h1>
+      <p class="lead">Computing Science Student | Software Developer | Cloud Enthusiast</p>
+      <a href="mailto:akandel599@gmail.com" class="btn btn-outline-light m-2">Email Me</a>
+      <a href="https://wa.me/447436598943" target="_blank" class="btn btn-success m-2">
+        <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <section class="container py-5" id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Results-oriented Computing Science student with experience in software development, full-stack engineering, and cloud-native solutions. Proficient in Java, Spring Boot, React.js, Python, and Azure with strong leadership and Agile development experience.</p>
+  </section>
+
+  <section class="container py-5" id="education" data-aos="fade-up">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>BSc Hons Computing Science</strong>, Ulster University (2021–2025)</li>
+      <li>Modules: Python, Java, Web Development, Networks, AI, Cloud, Full Stack</li>
+    </ul>
+  </section>
+
+  <section class="container py-5" id="projects" data-aos="fade-up">
+    <h2>Major Projects</h2>
     <div class="row">
-      <div class="col-md-8 mx-auto text-center">
-        <h2 class="mb-3">Profile</h2>
-        <p>
-          Highly motivated and passionate Information Technology graduate with a solid academic background and a strong
-          desire to contribute to innovative projects and solutions. I possess a strong understanding of core IT concepts
-          and programming languages, with a particular interest in software development and cybersecurity. I am seeking an
-          opportunity to apply my skills and knowledge in a dynamic IT environment, where I can contribute to the success
-          of the team while continuing to learn and grow professionally.
-        </p>
+      <div class="col-md-6 mb-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title">Multi-Restaurant Food Delivery System</h5>
+            <p class="card-text">Spring Boot & React, Google Maps API, PayPal</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title">Travel Gram</h5>
+            <p class="card-text">Azure-based, 10,000+ users, real-time sharing</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title">Restaurant Booking System</h5>
+            <p class="card-text">Angular + Flask</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title">Sports Leaderboard Website</h5>
+            <p class="card-text">HTML, CSS, jQuery</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="container py-5 bg-light">
-    <h2 class="text-center mb-4">Education</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong>2021 – 2023:</strong> Bachelor of Information Technology<br>
-            Federation University Australia, Sydney, NSW
-          </li>
-          <li class="list-group-item">
-            <strong>2018 – 2020:</strong> Diploma of IT<br>
-            AIBT College, Sydney, NSW
-          </li>
-          <li class="list-group-item">
-            <strong>2014 – 2016:</strong> Higher Secondary Education (Science)<br>
-            Sagarmatha Higher Secondary School, Nepal
-          </li>
+  <section class="container py-5" id="experience" data-aos="fade-up">
+    <h2>Employment History</h2>
+    <ul>
+      <li><strong>Software Developer, Direct Medics</strong> (2023–2024)
+        <ul>
+          <li>Developed web apps and backend systems on Azure</li>
+          <li>UI/UX redesign, technical documentation</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="container py-5">
-    <h2 class="text-center mb-4">Major Projects</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <ul class="list-group list-group-numbered">
-          <li class="list-group-item">
-            <strong>Online Library Management System:</strong> Developed a web-based system using PHP and MySQL to
-            manage book inventory, issue/return transactions, and user registrations.
-          </li>
-          <li class="list-group-item">
-            <strong>Online Job Portal:</strong> Created a responsive job portal using HTML, CSS, PHP, and MySQL that
-            allowed employers to post jobs and job seekers to apply online.
-          </li>
-          <li class="list-group-item">
-            <strong>Cybersecurity Awareness Campaign:</strong> Conducted a campaign within the university to promote
-            safe online practices and identify phishing threats.
-          </li>
+      </li>
+      <li><strong>Assistant Manager, Yaks Nepalese Restaurant</strong> (2021–Present)
+        <ul>
+          <li>Managed operations, social media, and cost control</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Employment History -->
-  <section id="experience" class="container py-5 bg-light">
-    <h2 class="text-center mb-4">Employment History</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <strong>2020 – Present:</strong> IT Support Assistant (Part-time)<br>
-            Sydney Tech Solutions, Sydney, NSW<br>
-            Provided hardware and software support to clients, including installation, troubleshooting, and maintenance.
-            Assisted in network setup and performed system upgrades.
-          </li>
-          <li class="list-group-item">
-            <strong>2018 – 2020:</strong> Customer Service Representative<br>
-            Telco Services Australia, Sydney, NSW<br>
-            Handled customer inquiries, provided technical assistance, and resolved billing issues for telecommunications
-            services.
-          </li>
+      </li>
+      <li><strong>Computer Science Teacher</strong> (2019–2021)
+        <ul>
+          <li>Taught digital literacy, conducted ICT activities</li>
         </ul>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="container py-5">
-    <h2 class="text-center mb-4">Skills</h2>
-    <div class="row justify-content-center">
+  <section class="container py-5" id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="row">
       <div class="col-md-6">
-        <ul class="list-group">
-          <li class="list-group-item">Programming: Java, Python, PHP, HTML, CSS</li>
-          <li class="list-group-item">Database Management: MySQL, Oracle</li>
-          <li class="list-group-item">Networking: Basic knowledge of TCP/IP, LAN/WAN</li>
-          <li class="list-group-item">Tools: Visual Studio Code, Eclipse, Wireshark</li>
-          <li class="list-group-item">Operating Systems: Windows, Linux</li>
-          <li class="list-group-item">Soft Skills: Communication, Teamwork, Problem-Solving</li>
+        <ul>
+          <li><i class="bi bi-code-slash"></i> Languages: Java, Python, PHP</li>
+          <li><i class="bi bi-box-seam"></i> Frameworks: Spring Boot, React.js, Angular</li>
+          <li><i class="bi bi-cloud"></i> Cloud: Azure (Blob Storage, Logic Apps, Cosmos DB)</li>
         </ul>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="container py-5 bg-light">
-    <h2 class="text-center mb-4">Contact</h2>
-    <div class="row justify-content-center">
       <div class="col-md-6">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Email:</strong> ankit.kandel@example.com</li>
-          <li class="list-group-item"><strong>Phone:</strong> +61 123 456 789</li>
-          <li class="list-group-item"><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/ankitkandel</a></li>
-          <li class="list-group-item"><strong>Location:</strong> Sydney, Australia</li>
+        <ul>
+          <li><i class="bi bi-shield-lock"></i> Cybersecurity: Access Control, Threat Analysis</li>
+          <li><i class="bi bi-people"></i> Soft Skills: Teamwork, Time Management, Problem Solving</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <small>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</small>
+  <section class="container py-5" id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p><i class="bi bi-envelope"></i> Email: <a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a></p>
+    <p><i class="bi bi-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank">Visit Profile</a></p>
+  </section>
+
+  <footer class="text-center py-4 text-white">
+    <p>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
