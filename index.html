@@ -307,7 +307,7 @@
  <!-- Contact Form -->
 <section class="section bg-light-blue" id="contact-form">
   <div class="container">
-    <h2>send Request</h2>
+    <h2>Send Request</h2>
     <form action="https://formspree.io/f/xpwrrpod" method="POST">
       <div class="row g-3">
         <div class="col-md-6">
@@ -322,6 +322,8 @@
         <div class="col-12">
           <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
         </div>
+        <input type="hidden" name="_redirect" value="https://antikandel001-prasad-cv-07436598943.vercel.app/thankyou.html">
+        <input type="text" name="_gotcha" style="display:none">
         <div class="col-12 text-end">
           <button type="submit" class="btn btn-primary px-4">Send</button>
         </div>
@@ -330,7 +332,6 @@
   </div>
 </section>
 
-  
 <!-- Footer -->
 <footer>
   <p>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</p>
