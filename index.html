@@ -304,11 +304,12 @@
     <p><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank">LinkedIn Profile</a></p>
   </div>
 </section>
- <!-- Contact Form -->
+<!-- Contact Form -->
 <section class="section bg-light-blue" id="contact-form">
   <div class="container">
     <h2>Send Request</h2>
-    <form action="https://formspree.io/f/xpwrrpod" method="POST">
+    <div class="alert alert-success" id="successMsg">Thank you! Your message has been sent.</div>
+    <form id="contactForm" action="https://formspree.io/f/xpwrrpod" method="POST">
       <div class="row g-3">
         <div class="col-md-6">
           <input type="text" name="name" class="form-control" placeholder="Full Name" required>
@@ -339,5 +340,35 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Additional JS for interactivity -->
+<script>
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        successMsg.style.display = 'block';
+        form.reset();
+      } else {
+        alert('Oops! Something went wrong.');
+      }
+    })
+    .catch(error => {
+      alert('Error sending message.');
+    });
+  });
+</script>
 </body>
 </html>
+
