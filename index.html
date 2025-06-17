@@ -4,32 +4,438 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ankit Prasad Kandel - Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- AOS Library CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background-color: #012c58;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffc107 !important;
+    }
+
+    .hero-section {
+      background: linear-gradient(to right, #012c58, #024a8a);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #012c58;
+      font-weight: 600;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #012c58;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #024a8a;
+    }
+
+    footer {
+      background-color: #012c58;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .bg-light-blue {
+      background-color: #e8f1fa;
+    }
+
+    .form-control:focus {
+      border-color: #024a8a;
+      box-shadow: 0 0 0 0.2rem rgba(2, 74, 138, 0.25);
+    }
+
+    .alert-success {
+      display: none;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      z-index: 999;
+    }
+
+    @media (max-width: 768px) {
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="btn btn-warning">↑ Top</button>
+<!-- Section Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Ankit</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Typed.js Script in Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <img src="Anti.jpeg" alt="Ankit Prasad Kandel" class="profile-img">
+    <h1 class="display-5 fw-bold">Ankit Prasad Kandel</h1>
+    <p class="lead">
+      <span id="typed-text"></span>
+    </p>
+    <p><i class="bi bi-geo-alt"></i>Belfast, Antrim, BT10 0AP</p>
+    <p><i class="bi bi-telephone"></i> 07436 598943 | <i class="bi bi-envelope"></i> <a href="mailto:akandel599@gmail.com" class="text-white">akandel599@gmail.com</a></p>
+    <p><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" class="text-warning">LinkedIn Profile</a></p>
+  </div>
+</section>
+  <!-- About -->
+<section class="section" id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>First Class Honours Computing Science graduate (July 2025) with proven expertise in software development, full-stack engineering, and cloud computing. Adept at designing scalable systems and user-focused applications using Java, Spring Boot, React.js, Python, and Azure. Gained substantial experience through professional placements and diverse academic projects. Recognised for strong problem-solving, Agile teamwork, and leadership capabilities. Awarded the Ulster University Excel Edge Award in 2025 for excellence in employability and skills development.</p>
+  </div>
+</section>
+
+<!-- Education -->
+<section class="section bg-light-blue" id="education">
+  <div class="container">
+    <h2>Education</h2>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="pages/about.html">About</a></li>
-      <li><a href="pages/education.html">Education</a></li>
-      <li><a href="pages/experience.html">Experience</a></li>
-      <li><a href="pages/projects.html">Projects</a></li>
-      <li><a href="pages/skills.html">Skills</a></li>
-      <li><a href="pages/certifications.html">Certifications</a></li>
-      <li><a href="pages/interests.html">Interests</a></li>
-      <li><a href="pages/contact.html">Contact</a></li>
+      <li><strong>BSc (Hons) Computing Science – First Class Honours </strong><br>
+        Ulster University, Belfast — Sep 2021 – Jul 2025
+        <ul>
+          <li>Final Year: Cloud Computing, Full Stack Development, AI, Enterprise Networking, Computing Project</li>
+          <li>Placement Year: Professional Practice Computing</li>
+          <li>Year 2: Software Development, Web App Development, Networking, Security, Mathematics, Data Structures</li>
+          <li>Year 1: Python, Java, Databases, Web Authoring, Systems Software</li>
+        </ul>
+        <strong>Awarded Ulster University Excel Edge Award – 2025</strong>
+      </li>
+      <li><strong>+2 Qualification NEB (2017 - 2020)</strong> – Gaindakot Namuna Secondary School
+        <ul>
+          <li>Computer Science A+, Physics B+, Chemistry B+, Maths B</li>
+        </ul>
+      </li>
     </ul>
-  </nav>
+  </div>
+</section>
 
-  <!-- Redirecting to About page -->
-  <script>
-    window.location.href = 'pages/about.html';
-  </script>
+<!-- Certifications -->
+<section class="section" id="certifications">
+  <div class="container">
+    <h2>Certifications</h2>
+    <ul>
+      <li>IBM Full Stack Software Developer – IBM</li>
+       <li>Meta Front-End developer - Meta </li>
+      <li>AWS Cloud Practitioner Essentials – Amazon Web Services</li>
+      <li>Application Development using Microservices and Serverless – IBM</li>
+      <li>Developing AI Applications with Python and Flask – IBM</li>
+      <li>Docker Foundations Professional Certificate – Docker, Inc</li>
+      <li>Advanced Python Projects: Build AI Applications – LinkedIn Learning</li>
+      <li>Career Essentials in GitHub Professional Certificate – GitHub</li>
+      <li>AWS Cloud Technical Essentials – Amazon Web Services</li>
+    </ul>
+  </div>
+</section>
 
-  <!-- If redirect fails -->
-  <p>If you are not redirected, <a href="pages/about.html">click here</a>.</p>
+<!-- Projects -->
+<section class="section bg-light-blue" id="projects">
+  <div class="container">
+    <h2>Major Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="card-title">Multi-Restaurant Food Delivery System</h5>
+          <p class="card-text">Full-stack platform with Spring Boot & React JS, integrating Google Maps API, PayPal integration and NGO donation linkage.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="card-title">Travel Gram</h5>
+          <p class="card-text">Cloud-based travel sharing app using Azure Blob Storage, real-time user feeds, and authentication.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="card-title">Restaurant Booking System</h5>
+          <p class="card-text">Built with Angular & Flask for secure reservations and admin panel management.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="card-title">Python Data Manager</h5>
+          <p class="card-text">Console application to manage, analyze and visualize data from text files.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="card-title">Sports Leaderboard Website</h5>
+          <p class="card-text">Created using HTML, CSS, and jQuery to dynamically display player stats.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="card-title">Photo Gallery Web App</h5>
+          <p class="card-text">Built with PHP Laravel Breeze, supports commenting and admin controls.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="card-title">Java Desktop Streak Game</h5>
+          <p class="card-text">Single/dual-player mode with high-score tracking and GUI-based gameplay.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="js/script.js"></script>
+  <!-- Experience -->
+<section class="section" id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Software Developer & IT Systems Engineer</strong><br>Direct Medics, Belfast (Jul 2023 – Jul 2024)
+        <ul>
+          <li>Designed and maintained web apps, automated workflows.</li>
+          <li>Built and optimized SQL/Azure databases.</li>
+          <li>Led UI/UX improvements across platforms.</li>
+          <li>Deployed software to cloud environments and provided training.</li>
+        </ul>
+      </li>
+      <li><strong>Front of House Manager</strong><br>Yaks Nepalese & Indian Restaurant, Bangor (Oct 2021 – Present)
+        <ul>
+          <li>Led team operations and customer experience efforts.</li>
+          <li>Helped achieve local #1 restaurant ranking.</li>
+        </ul>
+      </li>
+      <li><strong>Computer Science Teacher</strong><br>New Life Boarding Secondary School, Nepal (Dec 2019 – Jun 2021)
+        <ul>
+          <li>Taught computer literacy and organized ICT competitions.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="section bg-light-blue" id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Java, Python, JavaScript, PHP, Spring Boot, React.js, Angular, CSS, SQL</li>
+      <li><strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Microservices, Git, GitHub, Postman</li>
+      <li><strong>Tools & Methods:</strong> Full Stack Development, REST APIs, Agile, TDD, VS Code</li>
+      <li><strong>Cybersecurity:</strong> Threat Analysis, Access Control, Systems Security</li>
+      <li><strong>AI & Data:</strong> AI in Python, Data Structures, SQL Analytics, Flask Integration</li>
+      <li><strong>Soft Skills:</strong> Leadership, Teamwork, Communication, Time Management</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Interests -->
+<section class="section" id="interests">
+  <div class="container">
+    <h2>Interests & Achievements</h2>
+    <ul>
+      <li>Competitive cricket player – participated and won in Nepal, active in NI leagues.</li>
+      <li>Volunteered with Direct Medics and Ulster University community programs.</li>
+      <li>Personal tech projects and open-source contributions.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section bg-light-blue" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p><i class="bi bi-geo-alt"></i>Belfast, Antrim, BT10 0AP</p>
+    <p><i class="bi bi-phone"></i> 07436 598943</p>
+    <p><i class="bi bi-envelope"></i> <a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a></p>
+    <p><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank">LinkedIn Profile</a></p>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="section bg-light-blue" id="contact-form">
+  <div class="container">
+    <h2>Send Request</h2>
+    <div class="alert alert-success" id="successMsg" style="display:none;">Thank you! Your message has been sent.</div>
+    <form id="contactForm" action="https://formspree.io/f/xpwrrpod" method="POST">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="col-md-6">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+        <div class="col-12">
+          <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+        </div>
+        <div class="col-12">
+          <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <input type="hidden" name="_redirect" value="https://antikandel001-prasad-cv-07436598943.vercel.app/thankyou.html">
+        <input type="text" name="_gotcha" style="display:none">
+        <div class="col-12 text-end">
+          <button type="submit" class="btn btn-primary px-4">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS Library -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
+<!-- Typed.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  new Typed('#typed-text', {
+    strings: ['Computing Science Student', 'Software Developer', 'Cloud Enthusiast'],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 2000,
+    loop: true
+  });
+</script>
+
+<!-- Back to Top Button Script -->
+<script>
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- Additional JS for interactivity -->
+<script>
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        successMsg.style.display = 'block';
+        form.reset();
+        setTimeout(() => successMsg.style.display = 'none', 5000);
+      } else {
+        alert('Oops! Something went wrong.');
+      }
+    })
+    .catch(error => {
+      alert('Error sending message.');
+    });
+  });
+</script>
 </body>
 </html>
