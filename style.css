@@ -16,6 +16,10 @@ body {
 .nav-link:hover {
   color: #ffc107 !important;
 }
+.nav-link.active {
+  color: #ffc107 !important;
+  font-weight: 600;
+}
 
 .hero-section {
   background: url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
