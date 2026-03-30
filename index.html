@@ -3,445 +3,1428 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ankit Prasad Kandel - Portfolio</title>
+  <title>Ankit Prasad Kandel | Portfolio</title>
 
   <!-- Bootstrap CSS & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
   <!-- AOS Library CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f0f4f8;
-      color: #333;
+    :root {
+      --bg: #0a1020;
+      --bg-soft: #101935;
+      --panel: rgba(19, 31, 60, 0.78);
+      --panel-solid: #142347;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #eaf1ff;
+      --muted: #b8c4e4;
+      --primary: #5b9cff;
+      --primary-2: #67e8f9;
+      --accent: #ffd166;
+      --success: #73f0a8;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --section-pad: 92px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
-    .navbar {
-      background-color: #012c58;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(103, 232, 249, 0.10), transparent 20%),
+        radial-gradient(circle at 90% 10%, rgba(91, 156, 255, 0.16), transparent 20%),
+        radial-gradient(circle at 50% 90%, rgba(255, 209, 102, 0.08), transparent 18%),
+        linear-gradient(180deg, #060b18 0%, #0b1224 35%, #0d1730 100%);
+      overflow-x: hidden;
     }
 
-    .navbar-brand,
+    .floating-orb,
+    .floating-orb-2,
+    .floating-orb-3 {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(50px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .floating-orb {
+      width: 260px;
+      height: 260px;
+      top: 8%;
+      left: -60px;
+      background: rgba(91, 156, 255, 0.22);
+      animation: float1 10s ease-in-out infinite;
+    }
+
+    .floating-orb-2 {
+      width: 220px;
+      height: 220px;
+      top: 38%;
+      right: -50px;
+      background: rgba(103, 232, 249, 0.18);
+      animation: float2 12s ease-in-out infinite;
+    }
+
+    .floating-orb-3 {
+      width: 260px;
+      height: 260px;
+      bottom: 6%;
+      left: 25%;
+      background: rgba(255, 209, 102, 0.12);
+      animation: float3 14s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%,100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(30px) translateX(18px); }
+    }
+
+    @keyframes float2 {
+      0%,100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-28px) translateX(-14px); }
+    }
+
+    @keyframes float3 {
+      0%,100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-22px) translateX(16px); }
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .navbar {
+      background: rgba(8, 14, 30, 0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      color: #fff !important;
+      letter-spacing: 0.8px;
+    }
+
+    .navbar-brand span {
+      color: var(--accent);
+    }
+
     .nav-link {
-      color: white !important;
+      color: rgba(255, 255, 255, 0.88) !important;
       font-weight: 500;
-      letter-spacing: 0.5px;
+      margin-left: 8px;
+      transition: color 0.25s ease, transform 0.25s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #ffc107 !important;
+      color: var(--accent) !important;
+      transform: translateY(-1px);
+    }
+
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
     }
 
     .hero-section {
-      background: linear-gradient(to right, #012c58, #024a8a);
-      color: white;
-      padding: 80px 0 60px;
-      text-align: center;
+      position: relative;
+      padding: 118px 0 84px;
+      background:
+        linear-gradient(135deg, rgba(8, 15, 32, 0.88), rgba(14, 30, 65, 0.82)),
+        linear-gradient(135deg, #071124 0%, #11224b 55%, #17356e 100%);
+      overflow: hidden;
+    }
+
+    .hero-section::before,
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 50%;
+      filter: blur(24px);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-section::before {
+      width: 320px;
+      height: 320px;
+      top: -80px;
+      right: -50px;
+      background: rgba(103, 232, 249, 0.18);
+    }
+
+    .hero-section::after {
+      width: 260px;
+      height: 260px;
+      bottom: -70px;
+      left: -40px;
+      background: rgba(91, 156, 255, 0.18);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 32px;
+      padding: 42px 34px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.10) 20%, transparent 40%);
+      transform: translateX(-100%);
+      animation: sheen 8s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes sheen {
+      100% { transform: translateX(140%); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #fff;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge .pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 rgba(115, 240, 168, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(115, 240, 168, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(115, 240, 168, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(115, 240, 168, 0); }
+    }
+
+    .profile-img-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    .profile-img-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--accent));
+      z-index: 0;
+      animation: spinBorder 10s linear infinite;
+    }
+
+    @keyframes spinBorder {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     .profile-img {
-      width: 160px;
-      height: 160px;
+      position: relative;
+      z-index: 1;
+      width: 168px;
+      height: 168px;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid #fff;
+      border: 5px solid rgba(255,255,255,0.94);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.24);
+      background: #fff;
+    }
+
+    .hero-section h1 {
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-subtitle {
+      min-height: 34px;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.92);
       margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    h2 {
-      color: #012c58;
-      font-weight: 600;
-      margin-bottom: 30px;
-      border-bottom: 2px solid #012c58;
-      padding-bottom: 10px;
-      display: inline-block;
+    .hero-meta {
+      color: rgba(255,255,255,0.92);
+      font-size: 0.98rem;
     }
 
-    .section {
-      padding: 70px 0;
-    }
-
-    .card {
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-title {
-      font-weight: 600;
-      color: #024a8a;
-    }
-
-    footer {
-      background-color: #012c58;
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-    }
-
-    a {
-      color: #0d6efd;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    ul li {
+    .hero-meta p {
       margin-bottom: 10px;
     }
 
-    .bg-light-blue {
-      background-color: #e8f1fa;
+    .hero-meta a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero-meta a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+    }
+
+    .btn-glow,
+    .btn-outline-glow {
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      margin: 6px;
+    }
+
+    .btn-glow {
+      background: linear-gradient(135deg, var(--accent), #ffb84d);
+      color: #16203f;
+      border: none;
+      box-shadow: 0 10px 24px rgba(255, 209, 102, 0.25);
+    }
+
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      color: #16203f;
+    }
+
+    .btn-outline-glow {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #fff;
+      box-shadow: inset 0 0 0 0 rgba(255,255,255,0.08);
+    }
+
+    .btn-outline-glow:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .stats-row {
+      margin-top: 26px;
+    }
+
+    .stat-chip {
+      height: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat-chip h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .stat-chip p {
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: var(--section-pad) 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      color: var(--primary-2);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    h2 {
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 14px;
+      display: inline-block;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 4px;
+      border-radius: 999px;
+      margin: 12px auto 0;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2), var(--accent));
+    }
+
+    .section-title-wrap p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .glass-panel,
+    .custom-card,
+    .timeline-panel,
+    .contact-card {
+      background: var(--panel);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .custom-card {
+      padding: 28px;
+      height: 100%;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(103, 232, 249, 0.28);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.30);
+    }
+
+    .custom-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(103, 232, 249, 0.05), transparent 35%, rgba(91, 156, 255, 0.05));
+      pointer-events: none;
+    }
+
+    .icon-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(91,156,255,0.22), rgba(103,232,249,0.16));
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--primary-2);
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .custom-card h5,
+    .timeline-item h5,
+    .project-card h5,
+    .cert-card h5 {
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .custom-card p,
+    .custom-card li,
+    .timeline-item p,
+    .timeline-item li,
+    .project-card p,
+    .contact-card p {
+      color: var(--muted);
+    }
+
+    .highlight-grid .custom-card h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .timeline-panel {
+      padding: 30px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0;
+      padding-left: 30px;
+      border-left: 2px solid rgba(103, 232, 249, 0.28);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 34px;
+      padding-left: 18px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -41px;
+      top: 8px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      border: 3px solid #0f1a35;
+      box-shadow: 0 0 0 5px rgba(91,156,255,0.12);
+    }
+
+    .timeline-meta {
+      display: inline-block;
+      font-size: 0.92rem;
+      color: var(--primary-2);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .timeline-item ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .timeline-item li {
+      margin-bottom: 10px;
+    }
+
+    .timeline-item li:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-card .project-tags {
+      margin-top: 16px;
+    }
+
+    .project-tag,
+    .skill-pill,
+    .tool-pill {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin: 6px 8px 0 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
+    }
+
+    .skill-group {
+      margin-bottom: 24px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group h5 {
+      color: var(--primary-2);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .info-list p {
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .info-list a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .info-list a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      padding: 30px;
+      height: 100%;
+    }
+
+    .contact-card h5 {
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .form-control {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255,255,255,0.50);
     }
 
     .form-control:focus {
-      border-color: #024a8a;
-      box-shadow: 0 0 0 0.2rem rgba(2, 74, 138, 0.25);
+      border-color: rgba(103, 232, 249, 0.40);
+      box-shadow: 0 0 0 0.2rem rgba(91, 156, 255, 0.15);
+      background: rgba(255,255,255,0.10);
+      color: #fff;
     }
 
     .alert-success {
       display: none;
+      background: rgba(115, 240, 168, 0.12);
+      color: #d7ffe8;
+      border: 1px solid rgba(115, 240, 168, 0.24);
+      border-radius: 14px;
+    }
+
+    .btn-send {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #08111f;
+      font-weight: 700;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 999px;
+      box-shadow: 0 14px 28px rgba(91, 156, 255, 0.22);
+    }
+
+    .btn-send:hover {
+      color: #08111f;
+      transform: translateY(-1px);
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      text-decoration: none;
+    }
+
+    .quick-links a:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    footer {
+      background: rgba(5, 10, 20, 0.92);
+      color: #fff;
+      padding: 34px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer p {
+      margin-bottom: 6px;
+    }
+
+    footer small {
+      color: var(--muted);
     }
 
     #backToTop {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 26px;
+      right: 26px;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
       display: none;
       z-index: 999;
+      background: linear-gradient(135deg, var(--accent), #ffb84d);
+      color: #16203f;
+      font-weight: 800;
+      box-shadow: 0 14px 30px rgba(255, 209, 102, 0.24);
+    }
+
+    .text-highlight {
+      color: var(--primary-2);
+    }
+
+    @media (max-width: 992px) {
+      .hero-section {
+        padding: 102px 0 76px;
+      }
     }
 
     @media (max-width: 768px) {
+      :root {
+        --section-pad: 76px;
+      }
+
+      .hero-card {
+        padding: 30px 20px;
+      }
+
       .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 132px;
+        height: 132px;
+      }
+
+      .timeline-panel,
+      .contact-card,
+      .custom-card {
+        padding: 22px;
+      }
+
+      #backToTop {
+        width: 46px;
+        height: 46px;
+        right: 18px;
+        bottom: 18px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- Back to Top Button -->
-<button id="backToTop" class="btn btn-warning">↑ Top</button>
-<!-- Section Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <div class="floating-orb"></div>
+  <div class="floating-orb-2"></div>
+  <div class="floating-orb-3"></div>
 
-<!-- Typed.js Script in Hero Section -->
-<section class="hero-section">
-  <div class="container">
-    <img src="Anti.jpeg" alt="Ankit Prasad Kandel" class="profile-img">
-    <h1 class="display-5 fw-bold">Ankit Prasad Kandel</h1>
-    <p class="lead">
-      <span id="typed-text"></span>
-    </p>
-    <p><i class="bi bi-geo-alt"></i>Belfast, Antrim, BT10 0AP</p>
-    <p><i class="bi bi-telephone"></i> 07436 598943 | <i class="bi bi-envelope"></i> <a href="mailto:akandel599@gmail.com" class="text-white">akandel599@gmail.com</a></p>
-   <p><i class="bi bi-instagram" style="color:pink;"></i> <a href="https://www.instagram.com/ankit__kandel/" target="_blank" style="color:pink;">Instagram Profile</a></p>
+  <div class="site-shell">
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
-    <p><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" class="text-warning">LinkedIn Profile</a></p>
-  </div>
-</section>
-  <!-- About -->
-<section class="section" id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>First Class Honours Computing Science graduate (July 2025) with proven expertise in software development, full-stack engineering, and cloud computing. Adept at designing scalable systems and user-focused applications using Java, Spring Boot, React.js, Python, and Azure. Gained substantial experience through professional placements and diverse academic projects. Recognised for strong problem-solving, Agile teamwork, and leadership capabilities. Awarded the Ulster University Excel Edge Award in 2025 for excellence in employability and skills development.</p>
-  </div>
-</section>
-
-<!-- Education -->
-<section class="section bg-light-blue" id="education">
-  <div class="container">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>BSc (Hons) Computing Science – First Class Honours </strong><br>
-        Ulster University, Belfast — Sep 2021 – Jul 2025
-        <ul>
-          <li>Final Year: Cloud Computing, Full Stack Development, AI, Enterprise Networking, Computing Project</li>
-          <li>Placement Year: Professional Practice Computing</li>
-          <li>Year 2: Software Development, Web App Development, Networking, Security, Mathematics, Data Structures</li>
-          <li>Year 1: Python, Java, Databases, Web Authoring, Systems Software</li>
-        </ul>
-        
-        
-        <strong>Awarded Ulster University Excel Edge Award – 2025</strong>
-
-        
-      </li>
-      <li><strong>+2 Qualification NEB (2017 - 2020)</strong> – Gaindakot Namuna Secondary School
-        <ul>
-          <li>Computer Science A+, Physics B+, Chemistry B+, Maths B</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Certifications -->
-<section class="section" id="certifications">
-  <div class="container">
-    <h2>Certifications</h2>
-    <ul>
-      <li>IBM Full Stack Software Developer – IBM</li>
-       <li>Meta Front-End developer - Meta </li>
-      <li>AWS Cloud Practitioner Essentials – Amazon Web Services</li>
-      <li>Application Development using Microservices and Serverless – IBM</li>
-      <li>Developing AI Applications with Python and Flask – IBM</li>
-      <li>Docker Foundations Professional Certificate – Docker, Inc</li>
-      <li>Advanced Python Projects: Build AI Applications – LinkedIn Learning</li>
-      <li>Career Essentials in GitHub Professional Certificate – GitHub</li>
-      <li>AWS Cloud Technical Essentials – Amazon Web Services</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Projects -->
-<section class="section bg-light-blue" id="projects">
-  <div class="container">
-    <h2>Major Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Multi-Restaurant Food Delivery System</h5>
-          <p class="card-text">Full-stack platform with Spring Boot & React JS, integrating Google Maps API, PayPal integration and NGO donation linkage.</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Ankit<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-form">Send Request</a></li>
+          </ul>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Travel Gram</h5>
-          <p class="card-text">Cloud-based travel sharing app using Azure Blob Storage, real-time user feeds, and authentication.</p>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-card text-center" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="hero-badge">
+            <span class="pulse"></span>
+            Open to software opportunities
+          </div>
+
+          <div class="profile-img-wrap">
+            <img src="Anti.jpeg" alt="Ankit Prasad Kandel" class="profile-img">
+          </div>
+
+          <h1 class="display-5">Ankit Prasad Kandel</h1>
+          <p class="hero-subtitle"><span id="typed-text"></span></p>
+
+          <div class="hero-meta">
+            <p><i class="bi bi-geo-alt-fill me-2"></i>Belfast, United Kingdom</p>
+            <p>
+              <i class="bi bi-telephone-fill me-2"></i>07436 598943
+              <span class="mx-2">|</span>
+              <i class="bi bi-envelope-fill me-2"></i><a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a>
+            </p>
+            <p>
+              <i class="bi bi-globe2 me-2"></i><a href="#contact">Portfolio</a>
+              <span class="mx-2">|</span>
+              <i class="bi bi-linkedin me-2"></i><a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+            <p>
+              <i class="bi bi-instagram me-2 text-danger"></i><a href="https://www.instagram.com/ankit__kandel/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-glow">View Projects</a>
+            <a href="#contact-form" class="btn btn-outline-glow">Send Request</a>
+          </div>
+
+          <div class="row g-3 stats-row">
+            <div class="col-md-4">
+              <div class="stat-chip">
+                <h3>First Class</h3>
+                <p>Computing Science graduate</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-chip">
+                <h3>Full-Stack</h3>
+                <p>Java, Spring Boot, React, Python</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-chip">
+                <h3>Cloud</h3>
+                <p>Azure, AWS, Docker, Microservices</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Restaurant Booking System</h5>
-          <p class="card-text">Built with Angular & Flask for secure reservations and admin panel management.</p>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">About Me</span>
+          <h2>Professional Profile</h2>
+          <p>A sharper, more visual presentation of the same portfolio structure you already had.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="custom-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon-badge"><i class="bi bi-person-workspace"></i></div>
+              <p class="about-text mb-0">
+                First Class Computing Science graduate with hands-on experience in full-stack development and cloud-based systems, gained through industry placements and internships. Strong in Java, Spring Boot, React, Python, and Azure, with proven ability to contribute to real-world software projects, collaborate in Agile teams, and deliver reliable solutions.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Python Data Manager</h5>
-          <p class="card-text">Console application to manage, analyze and visualize data from text files.</p>
+    </section>
+
+    <!-- Added Section -->
+    <section class="section section-alt" id="highlights">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Added Section</span>
+          <h2>Highlights</h2>
+          <p>Extra section added without removing any of your original sections.</p>
+        </div>
+
+        <div class="row g-4 highlight-grid">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="custom-card text-center">
+              <div class="icon-badge mx-auto"><i class="bi bi-mortarboard-fill"></i></div>
+              <h3>2025</h3>
+              <p>BSc (Hons) Computing Science – First Class, Ulster University, Belfast.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="custom-card text-center">
+              <div class="icon-badge mx-auto"><i class="bi bi-code-slash"></i></div>
+              <h3>7</h3>
+              <p>Major projects across full-stack, cloud, web, Python, and Java desktop development.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="custom-card text-center">
+              <div class="icon-badge mx-auto"><i class="bi bi-briefcase-fill"></i></div>
+              <h3>4</h3>
+              <p>Roles spanning software development, IT systems, management, and education.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Sports Leaderboard Website</h5>
-          <p class="card-text">Created using HTML, CSS, and jQuery to dynamically display player stats.</p>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Education</span>
+          <h2>Academic Background</h2>
+          <p>Your updated CV achievements and qualifications, now structured in a stronger layout.</p>
+        </div>
+
+        <div class="timeline-panel" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h5>BSc (Hons) Computing Science – First Class</h5>
+              <span class="timeline-meta">Ulster University, Belfast | Sep 2021 – Jul 2025</span>
+              <ul>
+                <li>Dean’s List, Faculty of Computing</li>
+                <li>Ulster University Excel Edge Award</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <h5>+2 Qualification (Nepal Examination Board)</h5>
+              <span class="timeline-meta">2017 – 2020</span>
+              <p class="mb-0">Computer Science (A+), Physics (B+), Chemistry (B), Mathematics (B)</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Photo Gallery Web App</h5>
-          <p class="card-text">Built with PHP Laravel Breeze, supports commenting and admin controls.</p>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section section-alt" id="certifications">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Certifications</span>
+          <h2>Professional Certifications</h2>
+          <p>Kept as a dedicated section from your older version, updated to reflect the latest CV wording.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="custom-card cert-card">
+              <div class="icon-badge"><i class="bi bi-patch-check-fill"></i></div>
+              <h5>Core Certifications</h5>
+              <ul class="mb-0">
+                <li>IBM -IBM Full Stack Software Developer</li>
+                <li>Meta- Meta Front-End developer</li>
+                <li>IBM -Developing AI Applications with Python and Flask</li>
+                <li>Amazon Web Services- AWS Cloud Practitioner Essentials</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="custom-card cert-card">
+              <div class="icon-badge"><i class="bi bi-award-fill"></i></div>
+              <h5>Additional Certifications</h5>
+              <ul class="mb-0">
+                <li>Docker: Docker Foundations Professional Certificate</li>
+                <li>IBM-Application Development using Microservices and Serverless</li>
+                <li>GitHub: Career Essentials</li>
+                <li>LinkedIn Learning: Advanced Python Projects – AI Applications</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Java Desktop Streak Game</h5>
-          <p class="card-text">Single/dual-player mode with high-score tracking and GUI-based gameplay.</p>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Major Projects</span>
+          <h2>Project Portfolio</h2>
+          <p>All projects from the new CV are included, with a more premium presentation.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="custom-card project-card">
+              <div class="icon-badge"><i class="bi bi-bag-check-fill"></i></div>
+              <h5>Multi-Restaurant Food Delivery System</h5>
+              <p>Full-stack Spring Boot & React application with Google Maps API, PayPal payments, and NGO food-donation integration.</p>
+              <div class="project-tags">
+                <span class="project-tag">Spring Boot</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">Google Maps API</span>
+                <span class="project-tag">PayPal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+            <div class="custom-card project-card">
+              <div class="icon-badge"><i class="bi bi-cloud-fill"></i></div>
+              <h5>TravelGram (Cloud-Based Platform)</h5>
+              <p>Azure-hosted travel sharing app using Blob Storage, authentication, and real-time content updates.</p>
+              <div class="project-tags">
+                <span class="project-tag">Azure</span>
+                <span class="project-tag">Blob Storage</span>
+                <span class="project-tag">Authentication</span>
+                <span class="project-tag">Real-Time</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="custom-card project-card">
+              <div class="icon-badge"><i class="bi bi-calendar2-check-fill"></i></div>
+              <h5>Restaurant Booking System</h5>
+              <p>Angular & Flask system with secure authentication and real-time reservation management.</p>
+              <div class="project-tags">
+                <span class="project-tag">Angular</span>
+                <span class="project-tag">Flask</span>
+                <span class="project-tag">Authentication</span>
+                <span class="project-tag">Reservation Management</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+            <div class="custom-card project-card">
+              <div class="icon-badge"><i class="bi bi-bar-chart-line-fill"></i></div>
+              <h5>Python Data Manager</h5>
+              <p>Python tool for reading, storing, and visualising structured data from text files.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Data</span>
+                <span class="project-tag">Visualising</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="custom-card project-card">
+              <div class="icon-badge"><i class="bi bi-trophy-fill"></i></div>
+              <h5>Sports Leaderboard Website</h5>
+              <p>Dynamic leaderboard built with HTML, CSS, and jQuery to display live player scores.</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">jQuery</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+            <div class="custom-card project-card">
+              <div class="icon-badge"><i class="bi bi-images"></i></div>
+              <h5>Photo Gallery Web Application</h5>
+              <p>Laravel-based app supporting user comments and administrative moderation.</p>
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">Comments</span>
+                <span class="project-tag">Moderation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="custom-card project-card">
+              <div class="icon-badge"><i class="bi bi-controller"></i></div>
+              <h5>Java Desktop Streak Game</h5>
+              <p>Single and multiplayer Java game featuring interactive gameplay and high-score tracking.</p>
+              <div class="project-tags">
+                <span class="project-tag">Java</span>
+                <span class="project-tag">Desktop</span>
+                <span class="project-tag">High-Score Tracking</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Employment History</span>
+          <h2>Experience</h2>
+          <p>Every role from the updated CV is preserved here, with fuller visual hierarchy.</p>
+        </div>
+
+        <div class="timeline-panel" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h5>Perabytes Technologies UK | Software Developer Intern present</h5>
+              <ul>
+                <li>Assisted in developing and maintaining web-based applications using modern full-stack technologies.</li>
+                <li>Worked on frontend components and backend logic, contributing to feature development and bug fixes.</li>
+                <li>Collaborated with senior developers in an Agile environment, participating in stand-ups and code reviews.</li>
+                <li>Gained exposure to cloud-based deployment workflows, version control, and production-ready coding practices.</li>
+                <li>Strengthened skills in clean code, debugging, and real-world software delivery.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <h5>Software Developer & IT Systems Engineer Direct Medics, Belfast, Northern Ireland (July 2023 – July 2024)</h5>
+              <ul>
+                <li>Designed, developed, and maintained web applications and automation tools.</li>
+                <li>Built and optimized backend databases (SQL, Azure ) to support digital transformation initiatives.</li>
+                <li>Led UI/UX redesign projects, improving usability and responsiveness across platforms.</li>
+                <li>Deployed software solutions to cloud environments .</li>
+                <li>Authored technical documentation, delivered deployment training, and ensured software reliability through continuous troubleshooting and updates.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <h5>Front of House Manager, Yaks Restaurant, Bangor (Oct 2021 – jan 2025)</h5>
+              <ul>
+                <li>Led team operations and customer experience, contributing to the restaurant achieving #1 local ranking.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <h5>Computer Science Teacher — New Life Boarding Secondary School, Nepal (Dec 2019 – Jun 2021)</h5>
+              <ul>
+                <li>Delivered foundational computing and digital literacy education through interactive, project-based learning.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Skills Profile</span>
+          <h2>Technical Skills</h2>
+          <p>The original Skills section is kept, but displayed with grouped visual badges for a stronger impact.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="custom-card h-100">
+              <div class="icon-badge"><i class="bi bi-code-square"></i></div>
+
+              <div class="skill-group">
+                <h5>Languages</h5>
+                <span class="skill-pill">Java</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">PHP</span>
+                <span class="skill-pill">SQL</span>
+              </div>
+
+              <div class="skill-group">
+                <h5>Frameworks</h5>
+                <span class="skill-pill">Spring Boot</span>
+                <span class="skill-pill">React.js</span>
+                <span class="skill-pill">Angular</span>
+                <span class="skill-pill">Flask</span>
+                <span class="skill-pill">Laravel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="custom-card h-100">
+              <div class="icon-badge"><i class="bi bi-cloud-arrow-up-fill"></i></div>
+
+              <div class="skill-group">
+                <h5>Cloud & DevOps</h5>
+                <span class="skill-pill">Azure</span>
+                <span class="skill-pill">AWS</span>
+                <span class="skill-pill">Docker</span>
+                <span class="skill-pill">Microservices</span>
+                <span class="skill-pill">Serverless</span>
+              </div>
+
+              <div class="skill-group">
+                <h5>Tools & Practices</h5>
+                <span class="skill-pill">Git</span>
+                <span class="skill-pill">GitHub</span>
+                <span class="skill-pill">REST APIs</span>
+                <span class="skill-pill">Postman</span>
+                <span class="skill-pill">Agile</span>
+                <span class="skill-pill">TDD</span>
+              </div>
+
+              <div class="skill-group">
+                <h5>Security & Networking</h5>
+                <span class="skill-pill">Access Control</span>
+                <span class="skill-pill">Threat Analysis</span>
+                <span class="skill-pill">Network Protocols</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests -->
+    <section class="section section-alt" id="interests">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Interest and Achievement</span>
+          <h2>Interests & Achievements</h2>
+          <p>Your original section remains, updated to the latest CV wording.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="custom-card text-center h-100">
+              <div class="icon-badge mx-auto"><i class="bi bi-trophy-fill"></i></div>
+              <h5>Cricket</h5>
+              <p class="mb-0">Competitive cricket player with wins in Nepal; active in NI summer leagues.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="custom-card text-center h-100">
+              <div class="icon-badge mx-auto"><i class="bi bi-people-fill"></i></div>
+              <h5>Volunteering</h5>
+              <p class="mb-0">Volunteered with Direct Medics and university-led outreach.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="custom-card text-center h-100">
+              <div class="icon-badge mx-auto"><i class="bi bi-github"></i></div>
+              <h5>Build & Contribute</h5>
+              <p class="mb-0">Build personal projects and contribute to open-source.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Contact</span>
+          <h2>Get In Touch</h2>
+          <p>The original Contact section is preserved and presented in a more polished format.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="contact-card">
+              <h5>Contact Information</h5>
+              <div class="info-list">
+                <p><i class="bi bi-geo-alt-fill me-2 text-highlight"></i>Belfast, United Kingdom</p>
+                <p><i class="bi bi-telephone-fill me-2 text-highlight"></i><a href="tel:07436598943">07436 598943</a></p>
+                <p><i class="bi bi-envelope-fill me-2 text-highlight"></i><a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a></p>
+                <p><i class="bi bi-linkedin me-2 text-highlight"></i><a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+              </div>
+
+              <div class="quick-links">
+                <a href="mailto:akandel599@gmail.com"><i class="bi bi-envelope"></i>Email</a>
+                <a href="tel:07436598943"><i class="bi bi-telephone"></i>Call</a>
+                <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i>LinkedIn</a>
+                <a href="https://www.instagram.com/ankit__kandel/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i>Instagram</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="contact-card">
+              <h5>Why this version is stronger</h5>
+              <p>
+                It keeps your original site structure, preserves the latest CV content, adds motion and depth, improves hierarchy, and fixes the contact form logic so it behaves correctly.
+              </p>
+              <p class="mb-0">
+                Replace your current <strong>index.html</strong> with this version, keep <strong>Anti.jpeg</strong> in the same folder, and then update any extra pages in your <strong>pages</strong> folder to keep the whole site consistent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section section-alt" id="contact-form">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Send Request</span>
+          <h2>Contact Form</h2>
+          <p>Original section kept, with cleaner behavior and visual polish.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="zoom-in">
+            <div class="contact-card">
+              <div class="alert alert-success" id="successMsg">Thank you! Your message has been sent.</div>
+
+              <form id="contactForm" action="https://formspree.io/f/xpwrrpod" method="POST">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                  </div>
+                  <div class="col-12">
+                    <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                  </div>
+                  <input type="text" name="_gotcha" style="display:none">
+                  <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-send px-4">Send</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Ankit Prasad Kandel. All rights reserved.</p>
+        <small>Built as an upgraded portfolio version with preserved structure, updated CV content, and enhanced visual design.</small>
+      </div>
+    </footer>
   </div>
-</section>
 
-  <!-- Experience -->
-<section class="section" id="experience">
-  <div class="container">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>Software Developer & IT Systems Engineer</strong><br>Direct Medics, Belfast (Jul 2023 – Jul 2024)
-        <ul>
-          <li>Designed and maintained web apps, automated workflows.</li>
-          <li>Built and optimized SQL/Azure databases.</li>
-          <li>Led UI/UX improvements across platforms.</li>
-          <li>Deployed software to cloud environments and provided training.</li>
-        </ul>
-      </li>
-      <li><strong>Front of House Manager</strong><br>Yaks Nepalese & Indian Restaurant, Bangor (Oct 2021 – Present)
-        <ul>
-          <li>Led team operations and customer experience efforts.</li>
-          <li>Helped achieve local #1 restaurant ranking.</li>
-        </ul>
-      </li>
-      <li><strong>Computer Science Teacher</strong><br>New Life Boarding Secondary School, Nepal (Dec 2019 – Jun 2021)
-        <ul>
-          <li>Taught computer literacy and organized ICT competitions.</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Skills -->
-<section class="section bg-light-blue" id="skills">
-  <div class="container">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Java, Python, JavaScript, PHP, Spring Boot, React.js, Angular, CSS, SQL</li>
-      <li><strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Microservices, Git, GitHub, Postman</li>
-      <li><strong>Tools & Methods:</strong> Full Stack Development, REST APIs, Agile, TDD, VS Code</li>
-      <li><strong>Cybersecurity:</strong> Threat Analysis, Access Control, Systems Security</li>
-      <li><strong>AI & Data:</strong> AI in Python, Data Structures, SQL Analytics, Flask Integration</li>
-      <li><strong>Soft Skills:</strong> Leadership, Teamwork, Communication, Time Management</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Interests -->
-<section class="section" id="interests">
-  <div class="container">
-    <h2>Interests & Achievements</h2>
-    <ul>
-      <li>Competitive cricket player – participated and won in Nepal, active in NI leagues.</li>
-      <li>Volunteered with Direct Medics and Ulster University community programs.</li>
-      <li>Personal tech projects and open-source contributions.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="section bg-light-blue" id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p><i class="bi bi-geo-alt"></i>Belfast, Antrim, BT10 0AP</p>
-    <p><i class="bi bi-phone"></i> 07436 598943</p>
-    <p><i class="bi bi-envelope"></i> <a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a></p>
-    <p><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank">LinkedIn Profile</a></p>
-  </div>
-</section>
-
-<!-- Contact Form -->
-<section class="section bg-light-blue" id="contact-form">
-  <div class="container">
-    <h2>Send Request</h2>
-    <div class="alert alert-success" id="successMsg" style="display:none;">Thank you! Your message has been sent.</div>
-    <form id="contactForm" action="https://formspree.io/f/xpwrrpod" method="POST">
-      <div class="row g-3">
-        <div class="col-md-6">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-        </div>
-        <div class="col-md-6">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-        </div>
-        <div class="col-12">
-          <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-        </div>
-        <div class="col-12">
-          <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-        </div>
-        <input type="hidden" name="_redirect" value="https://antikandel001-prasad-cv-07436598943.vercel.app/thankyou.html">
-        <input type="text" name="_gotcha" style="display:none">
-        <div class="col-12 text-end">
-          <button type="submit" class="btn btn-primary px-4">Send</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</section>
-
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</p>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- AOS Library -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
-
-<!-- Typed.js Script -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  new Typed('#typed-text', {
-    strings: ['Computing Science Student', 'Software Developer', 'Cloud Enthusiast'],
-    typeSpeed: 60,
-    backSpeed: 40,
-    backDelay: 2000,
-    loop: true
-  });
-</script>
-
-<!-- Back to Top Button Script -->
-<script>
-  const backToTopBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
-<!-- Additional JS for interactivity -->
-<script>
-  const form = document.getElementById('contactForm');
-  const successMsg = document.getElementById('successMsg');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        successMsg.style.display = 'block';
-        form.reset();
-        setTimeout(() => successMsg.style.display = 'none', 5000);
-      } else {
-        alert('Oops! Something went wrong.');
-      }
-    })
-    .catch(error => {
-      alert('Error sending message.');
+  <!-- AOS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      offset: 80
     });
-  });
-</script>
+  </script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed('#typed-text', {
+      strings: [
+        'Computing Science Graduate',
+        'Software Developer',
+        'Full-Stack Developer',
+        'Cloud-Based Systems Enthusiast'
+      ],
+      typeSpeed: 55,
+      backSpeed: 32,
+      backDelay: 1800,
+      loop: true
+    });
+  </script>
+
+  <!-- Back to Top -->
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      backToTopBtn.style.alignItems = 'center';
+      backToTopBtn.style.justifyContent = 'center';
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- Contact Form -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          successMsg.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            successMsg.style.display = 'none';
+          }, 5000);
+        } else {
+          alert('Oops! Something went wrong.');
+        }
+      } catch (error) {
+        alert('Error sending message.');
+      }
+    });
+  </script>
+
+  <!-- Active Nav Highlight -->
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
