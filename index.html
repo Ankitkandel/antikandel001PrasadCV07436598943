@@ -5,14 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ankit Prasad Kandel | Portfolio</title>
 
-  <!-- Bootstrap CSS & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-
-  <!-- AOS Library CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
@@ -367,6 +362,135 @@
       margin-bottom: 0;
       color: rgba(255,255,255,0.82);
       font-size: 0.95rem;
+    }
+
+    .premium-chip {
+      position: relative;
+      overflow: hidden;
+      min-height: 172px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow:
+        0 18px 38px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .premium-chip::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.06) 25%,
+        transparent 50%
+      );
+      transform: translateX(-120%);
+      transition: transform 0.8s ease;
+    }
+
+    .premium-chip::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(91,156,255,0.45), rgba(103,232,249,0.35), rgba(255,209,102,0.35));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .premium-chip:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow:
+        0 28px 50px rgba(0,0,0,0.34),
+        0 0 28px rgba(103,232,249,0.10);
+      border-color: rgba(103,232,249,0.30);
+    }
+
+    .premium-chip:hover::before {
+      transform: translateX(120%);
+    }
+
+    .icon-top {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(91,156,255,0.22), rgba(103,232,249,0.18));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+    }
+
+    .premium-chip h3 {
+      font-size: 1.22rem;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .premium-chip p {
+      font-size: 0.98rem;
+      line-height: 1.4;
+    }
+
+    .gold {
+      color: #ffd166;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(255, 209, 102, 0.16);
+    }
+
+    .cyan {
+      color: #67e8f9;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(103, 232, 249, 0.14);
+    }
+
+    .blue {
+      color: #60a5fa;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(96, 165, 250, 0.14);
+    }
+
+    .purple {
+      color: #a78bfa;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(167, 139, 250, 0.14);
+    }
+
+    .green {
+      color: #4ade80;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(74, 222, 128, 0.14);
+    }
+
+    .stats-row .col-sm-6,
+    .stats-row .col-lg-3 {
+      animation: floatCard 6s ease-in-out infinite;
+    }
+
+    .stats-row .col-sm-6:nth-child(2) { animation-delay: 0.4s; }
+    .stats-row .col-sm-6:nth-child(3) { animation-delay: 0.8s; }
+    .stats-row .col-sm-6:nth-child(4) { animation-delay: 1.2s; }
+    .stats-row .col-sm-6:nth-child(5) { animation-delay: 1.6s; }
+    .stats-row .col-sm-6:nth-child(6) { animation-delay: 2s; }
+    .stats-row .col-sm-6:nth-child(7) { animation-delay: 2.4s; }
+    .stats-row .col-sm-6:nth-child(8) { animation-delay: 2.8s; }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
 
     .section {
@@ -746,16 +870,13 @@
   </style>
 </head>
 <body>
-
   <div class="floating-orb"></div>
   <div class="floating-orb-2"></div>
   <div class="floating-orb-3"></div>
 
   <div class="site-shell">
-    <!-- Back to Top Button -->
     <button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#home">Ankit<span>.</span></a>
@@ -779,7 +900,6 @@
       </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero-section" id="home">
       <div class="container">
         <div class="hero-card text-center" data-aos="zoom-in" data-aos-duration="1000">
@@ -817,91 +937,68 @@
             <a href="#contact-form" class="btn btn-outline-glow">Send Request</a>
           </div>
 
-         <div class="row g-4 stats-row text-center">
-
-  <!-- FIRST CLASS -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-mortarboard-fill"></i></div>
-      <h3 class="gold">First Class Honours</h3>
-      <p>Computing Science</p>
-    </div>
-  </div>
-
-  <!-- DEANS LIST -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-stars"></i></div>
-      <h3 class="cyan">Dean’s List</h3>
-      <p>Faculty of Computing</p>
-    </div>
-  </div>
-
-  <!-- EXCEL EDGE -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-award-fill"></i></div>
-      <h3 class="blue">Excel Edge Award</h3>
-      <p>Ulster University</p>
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-briefcase-fill"></i></div>
-      <h3 class="purple">Industry Experience</h3>
-      <p>Software Dev & Internships</p>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-code-slash"></i></div>
-      <h3 class="green">7+ Projects</h3>
-      <p>Full-Stack & Cloud Systems</p>
-    </div>
-  </div>
-
-  <!-- CLOUD -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-cloud-fill"></i></div>
-      <h3 class="cyan">Cloud Skills</h3>
-      <p>AWS, Azure, Docker</p>
-    </div>
-  </div>
-
-  <!-- CERTIFICATIONS -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-patch-check-fill"></i></div>
-      <h3 class="gold">Certifications</h3>
-      <p>IBM, AWS, Meta</p>
-    </div>
-  </div>
-
-  <!-- TECH STACK -->
-  <div class="col-md-3">
-    <div class="stat-chip premium-chip">
-      <div class="icon-top"><i class="bi bi-cpu-fill"></i></div>
-      <h3 class="blue">Tech Stack</h3>
-      <p>Java, React, Python</p>
-    </div>
-  </div>
-
-</div>
-            <div class="col-md-4">
-              <div class="stat-chip">
-                <h3>Full-Stack</h3>
-                <p>Java, Spring Boot, React, Python</p>
+          <div class="row g-4 stats-row text-center">
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-mortarboard-fill"></i></div>
+                <h3 class="gold">First Class Honours</h3>
+                <p>Computing Science</p>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="stat-chip">
-                <h3>Cloud</h3>
-                <p>Azure, AWS, Docker, Microservices</p>
+
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="80">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-stars"></i></div>
+                <h3 class="cyan">Dean’s List</h3>
+                <p>Faculty of Computing</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="160">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-award-fill"></i></div>
+                <h3 class="blue">Excel Edge Award</h3>
+                <p>Ulster University</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="240">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-briefcase-fill"></i></div>
+                <h3 class="purple">Industry Experience</h3>
+                <p>Software Dev & Internships</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="320">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-code-slash"></i></div>
+                <h3 class="green">7 Major Projects</h3>
+                <p>Full-Stack & Cloud</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-cloud-fill"></i></div>
+                <h3 class="cyan">Cloud Skills</h3>
+                <p>AWS, Azure, Docker</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="480">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-patch-check-fill"></i></div>
+                <h3 class="gold">Certifications</h3>
+                <p>IBM, AWS, Meta</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="560">
+              <div class="stat-chip premium-chip">
+                <div class="icon-top"><i class="bi bi-cpu-fill"></i></div>
+                <h3 class="blue">Tech Stack</h3>
+                <p>Java, React, Python</p>
               </div>
             </div>
           </div>
@@ -909,7 +1006,6 @@
       </div>
     </section>
 
-    <!-- About -->
     <section class="section" id="about">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -931,7 +1027,6 @@
       </div>
     </section>
 
-    <!-- Added Section -->
     <section class="section section-alt" id="highlights">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -966,54 +1061,47 @@
       </div>
     </section>
 
-    <!-- Education -->
-<section class="section" id="education">
-  <div class="container">
-    <div class="section-title-wrap" data-aos="fade-up">
-      <span class="section-kicker">Education</span>
-      <h2>Academic Background</h2>
-      <p>Academic excellence and recognised achievements.</p>
-    </div>
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Education</span>
+          <h2>Academic Background</h2>
+          <p>Academic excellence and recognised achievements.</p>
+        </div>
 
-    <div class="timeline-panel" data-aos="fade-up">
-      <div class="timeline">
+        <div class="timeline-panel" data-aos="fade-up">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h5>
+                BSc (Hons) Computing Science –
+                <span style="color:#ffd166; font-weight:800;">First Class</span>
+              </h5>
 
-        <!-- UNIVERSITY -->
-        <div class="timeline-item">
-          <h5>
-            BSc (Hons) Computing Science – 
-            <span style="color:#ffd166; font-weight:800;">First Class</span>
-          </h5>
+              <span class="timeline-meta">
+                Ulster University, Belfast | Sep 2021 – Jul 2025
+              </span>
 
-          <span class="timeline-meta">
-            Ulster University, Belfast | Sep 2021 – Jul 2025
-          </span>
+              <div class="mt-3">
+                <p>
+                  • <span style="color:#67e8f9; font-weight:700;">Dean’s List, Faculty of Computing</span><br>
+                  • <span style="color:#38bdf8; font-weight:700;">Ulster University Excel Edge Award</span>
+                </p>
+              </div>
+            </div>
 
-          <!-- 🔥 HIGHLIGHTED ACHIEVEMENTS -->
-          <div class="mt-3">
-            <p>
-              • <span style="color:#67e8f9; font-weight:700;">Dean’s List, Faculty of Computing</span><br>
-              • <span style="color:#38bdf8; font-weight:700;">Ulster University Excel Edge Award</span>
-            </p>
+            <div class="timeline-item">
+              <h5>+2 Qualification (Nepal Examination Board)</h5>
+              <span class="timeline-meta">2017 – 2020</span>
+
+              <p class="mt-2">
+                Computer Science (A+), Physics (B+), Chemistry (B), Mathematics (B)
+              </p>
+            </div>
           </div>
         </div>
-
-        <!-- SCHOOL -->
-        <div class="timeline-item">
-          <h5>+2 Qualification (Nepal Examination Board)</h5>
-          <span class="timeline-meta">2017 – 2020</span>
-
-          <p class="mt-2">
-            Computer Science (A+), Physics (B+), Chemistry (B), Mathematics (B)
-          </p>
-        </div>
-
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-    <!-- Certifications -->
     <section class="section section-alt" id="certifications">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -1052,13 +1140,12 @@
       </div>
     </section>
 
-    <!-- Projects -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
           <span class="section-kicker">Major Projects</span>
           <h2>Project Portfolio</h2>
-          <p>All projects from the  CV are included, with a more premium presentation.</p>
+          <p>All projects from the CV are included, with a more premium presentation.</p>
         </div>
 
         <div class="row g-4">
@@ -1159,7 +1246,6 @@
       </div>
     </section>
 
-    <!-- Experience -->
     <section class="section section-alt" id="experience">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -1210,7 +1296,6 @@
       </div>
     </section>
 
-    <!-- Skills -->
     <section class="section" id="skills">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -1279,7 +1364,6 @@
       </div>
     </section>
 
-    <!-- Interests -->
     <section class="section section-alt" id="interests">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -1316,7 +1400,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="section" id="contact">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -1347,16 +1430,14 @@
 
           <div class="col-lg-7" data-aos="fade-left">
             <div class="contact-card">
-              <h5>Thanks for taking the time to explore my portfolio. Here you’ll find a snapshot of my journey — from achieving a First Class degree and earning academic recognition, to gaining hands-on industry experience and building real-world software and cloud-based solutionsr</h5>
-              <p> </p>
-              
+              <h5>Thanks for taking the time to explore my portfolio. Here you’ll find a snapshot of my journey from achieving a First Class degree and earning academic recognition, to gaining hands on industry experience and building real-world software and cloud-based solutions.</h5>
+              <p></p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Form -->
     <section class="section section-alt" id="contact-form">
       <div class="container">
         <div class="section-title-wrap" data-aos="fade-up">
@@ -1396,7 +1477,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <p>&copy; 2026 Ankit Prasad Kandel. All rights reserved.</p>
@@ -1405,10 +1485,8 @@
     </footer>
   </div>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- AOS Library -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -1418,7 +1496,6 @@
     });
   </script>
 
-  <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     new Typed('#typed-text', {
@@ -1435,7 +1512,6 @@
     });
   </script>
 
-  <!-- Back to Top -->
   <script>
     const backToTopBtn = document.getElementById('backToTop');
 
@@ -1450,7 +1526,6 @@
     });
   </script>
 
-  <!-- Contact Form -->
   <script>
     const form = document.getElementById('contactForm');
     const successMsg = document.getElementById('successMsg');
@@ -1484,7 +1559,6 @@
     });
   </script>
 
-  <!-- Active Nav Highlight -->
   <script>
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
