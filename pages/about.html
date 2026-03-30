@@ -3,439 +3,903 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ankit Prasad Kandel - Portfolio</title>
+  <title>Ankit Prasad Kandel | Portfolio</title>
 
-  <!-- Bootstrap CSS & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Bootstrap CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <!-- AOS Library CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f0f4f8;
-      color: #333;
+    :root {
+      --primary: #0b2c5f;
+      --secondary: #1d4ed8;
+      --accent: #f59e0b;
+      --light-bg: #f8fbff;
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow: 0 12px 30px rgba(2, 12, 27, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
-    .navbar {
-      background-color: #012c58;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 20%),
+        linear-gradient(to bottom, #f8fbff, #eef5ff);
     }
 
-    .navbar-brand,
-    .nav-link {
-      color: white !important;
-      font-weight: 500;
+    .navbar {
+      background: rgba(11, 44, 95, 0.92);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
       letter-spacing: 0.5px;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin-left: 8px;
+      transition: 0.3s;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: #ffc107 !important;
+      color: #ffd166 !important;
     }
 
     .hero-section {
-      background: linear-gradient(to right, #012c58, #024a8a);
-      color: white;
-      padding: 80px 0 60px;
-      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0b2c5f 0%, #1d4ed8 55%, #2563eb 100%);
+      color: #fff;
+      padding: 110px 0 80px;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 20%),
+                  radial-gradient(circle at 80% 30%, rgba(255,255,255,0.10), transparent 18%);
+      pointer-events: none;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     }
 
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid #fff;
+      border: 5px solid rgba(255,255,255,0.9);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.20);
       margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    h2 {
-      color: #012c58;
-      font-weight: 600;
-      margin-bottom: 30px;
-      border-bottom: 2px solid #012c58;
-      padding-bottom: 10px;
+    .hero-badge {
       display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
     }
 
-    .section {
-      padding: 70px 0;
-    }
-
-    .card {
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-title {
-      font-weight: 600;
-      color: #024a8a;
-    }
-
-    footer {
-      background-color: #012c58;
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-    }
-
-    a {
-      color: #0d6efd;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    ul li {
+    .hero-section h1 {
+      font-weight: 800;
       margin-bottom: 10px;
     }
 
-    .bg-light-blue {
-      background-color: #e8f1fa;
+    .hero-section .lead {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.92);
+      min-height: 34px;
+    }
+
+    .hero-links a {
+      margin: 8px 10px 0 0;
+    }
+
+    .btn-custom-primary {
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 12px 22px;
+    }
+
+    .btn-custom-primary:hover {
+      background: #f3f4f6;
+      color: var(--primary);
+    }
+
+    .btn-custom-outline {
+      border: 1px solid rgba(255,255,255,0.7);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 12px 22px;
+    }
+
+    .btn-custom-outline:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    .quick-stats {
+      margin-top: 30px;
+    }
+
+    .stat-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      height: 100%;
+    }
+
+    .stat-box h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .glass-card,
+    .card-custom {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-custom {
+      padding: 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(2, 12, 27, 0.10);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(29, 78, 216, 0.10);
+      color: var(--secondary);
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+
+    .info-list p,
+    .hero-meta p {
+      margin-bottom: 10px;
+    }
+
+    .hero-meta a,
+    .info-list a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero-meta a:hover,
+    .info-list a:hover {
+      text-decoration: underline;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      border-left: 3px solid rgba(29, 78, 216, 0.18);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+      padding-left: 18px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background: var(--secondary);
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.10);
+    }
+
+    .timeline-item h5 {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--primary);
+      margin: 6px 8px 6px 0;
+      font-weight: 500;
+      border: 1px solid rgba(29, 78, 216, 0.10);
+    }
+
+    .project-card h5,
+    .card-custom h5 {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .project-tags span {
+      display: inline-block;
+      font-size: 0.82rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin: 6px 6px 0 0;
+      background: #f3f7ff;
+      color: var(--secondary);
+      border: 1px solid rgba(29, 78, 216, 0.10);
+    }
+
+    .cert-list li,
+    .interest-list li,
+    .experience-list li {
+      margin-bottom: 10px;
+    }
+
+    .contact-box {
+      padding: 30px;
+      height: 100%;
+    }
+
+    .form-control {
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(15, 23, 42, 0.10);
     }
 
     .form-control:focus {
-      border-color: #024a8a;
-      box-shadow: 0 0 0 0.2rem rgba(2, 74, 138, 0.25);
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 0.2rem rgba(29, 78, 216, 0.12);
     }
 
-    .alert-success {
-      display: none;
+    .btn-send {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-weight: 600;
+    }
+
+    .btn-send:hover {
+      color: #fff;
+      opacity: 0.95;
+    }
+
+    footer {
+      background: #081f44;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+      margin-top: 30px;
     }
 
     #backToTop {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 25px;
+      right: 25px;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #fbbf24);
+      color: #111827;
+      font-weight: 700;
       display: none;
       z-index: 999;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .text-muted-custom {
+      color: var(--muted);
+    }
+
+    @media (max-width: 991px) {
+      .hero-section {
+        padding: 90px 0 60px;
+      }
     }
 
     @media (max-width: 768px) {
       .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .section {
+        padding: 70px 0;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- Back to Top Button -->
-<button id="backToTop" class="btn btn-warning">↑ Top</button>
-<!-- Section Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Ankit</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <!-- Back to Top -->
+  <button id="backToTop"><i class="bi bi-arrow-up"></i></button>
 
-<!-- Typed.js Script in Hero Section -->
-<section class="hero-section">
-  <div class="container">
-    <img src="Anti.jpeg" alt="Ankit Prasad Kandel" class="profile-img">
-    <h1 class="display-5 fw-bold">Ankit Prasad Kandel</h1>
-    <p class="lead">
-      <span id="typed-text"></span>
-    </p>
-    <p><i class="bi bi-geo-alt"></i>Belfast, Antrim, BT10 0AP</p>
-    <p><i class="bi bi-telephone"></i> 07436 598943 | <i class="bi bi-envelope"></i> <a href="mailto:akandel599@gmail.com" class="text-white">akandel599@gmail.com</a></p>
-    <p><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" class="text-warning">LinkedIn Profile</a></p>
-  </div>
-</section>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Ankit Kandel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#interests">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-card text-center" data-aos="zoom-in" data-aos-duration="1000">
+        <span class="hero-badge">Available for Software Opportunities</span>
+        <div>
+          <img src="Anti.jpeg" alt="Ankit Prasad Kandel" class="profile-img">
+        </div>
+        <h1 class="display-5">Ankit Prasad Kandel</h1>
+        <p class="lead"><span id="typed-text"></span></p>
+
+        <div class="hero-meta mt-3">
+          <p><i class="bi bi-geo-alt-fill me-2"></i>Belfast, United Kingdom</p>
+          <p>
+            <i class="bi bi-telephone-fill me-2"></i>
+            <a href="tel:07436598943">07436 598943</a>
+            &nbsp; | &nbsp;
+            <i class="bi bi-envelope-fill me-2"></i>
+            <a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a>
+          </p>
+          <p>
+            <i class="bi bi-linkedin me-2"></i>
+            <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          </p>
+        </div>
+
+        <div class="hero-links mt-4">
+          <a href="#projects" class="btn btn-custom-primary">View Projects</a>
+          <a href="#contact" class="btn btn-custom-outline">Contact Me</a>
+        </div>
+
+        <div class="row quick-stats g-3 mt-4">
+          <div class="col-md-4">
+            <div class="stat-box">
+              <h3>First Class</h3>
+              <p class="mb-0">Computing Science Graduate</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-box">
+              <h3>Full-Stack</h3>
+              <p class="mb-0">Java, React, Spring Boot, Python</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-box">
+              <h3>Cloud</h3>
+              <p class="mb-0">Azure, AWS, Docker, Serverless</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About -->
-<section class="section" id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>First Class Honours Computing Science graduate (July 2025) with proven expertise in software development, full-stack engineering, and cloud computing. Adept at designing scalable systems and user-focused applications using Java, Spring Boot, React.js, Python, and Azure. Gained substantial experience through professional placements and diverse academic projects. Recognised for strong problem-solving, Agile teamwork, and leadership capabilities. Awarded the Ulster University Excel Edge Award in 2025 for excellence in employability and skills development.</p>
-  </div>
-</section>
-
-<!-- Education -->
-<section class="section bg-light-blue" id="education">
-  <div class="container">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>BSc (Hons) Computing Science – First Class Honours </strong><br>
-        Ulster University, Belfast — Sep 2021 – Jul 2025
-        <ul>
-          <li>Final Year: Cloud Computing, Full Stack Development, AI, Enterprise Networking, Computing Project</li>
-          <li>Placement Year: Professional Practice Computing</li>
-          <li>Year 2: Software Development, Web App Development, Networking, Security, Mathematics, Data Structures</li>
-          <li>Year 1: Python, Java, Databases, Web Authoring, Systems Software</li>
-        </ul>
-        <strong>Awarded Ulster University Excel Edge Award – 2025</strong>
-      </li>
-      <li><strong>+2 Qualification NEB (2017 - 2020)</strong> – Gaindakot Namuna Secondary School
-        <ul>
-          <li>Computer Science A+, Physics B+, Chemistry B+, Maths B</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Certifications -->
-<section class="section" id="certifications">
-  <div class="container">
-    <h2>Certifications</h2>
-    <ul>
-      <li>IBM Full Stack Software Developer – IBM</li>
-       <li>Meta Front-End developer - Meta </li>
-      <li>AWS Cloud Practitioner Essentials – Amazon Web Services</li>
-      <li>Application Development using Microservices and Serverless – IBM</li>
-      <li>Developing AI Applications with Python and Flask – IBM</li>
-      <li>Docker Foundations Professional Certificate – Docker, Inc</li>
-      <li>Advanced Python Projects: Build AI Applications – LinkedIn Learning</li>
-      <li>Career Essentials in GitHub Professional Certificate – GitHub</li>
-      <li>AWS Cloud Technical Essentials – Amazon Web Services</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Projects -->
-<section class="section bg-light-blue" id="projects">
-  <div class="container">
-    <h2>Major Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Multi-Restaurant Food Delivery System</h5>
-          <p class="card-text">Full-stack platform with Spring Boot & React JS, integrating Google Maps API, PayPal integration and NGO donation linkage.</p>
-        </div>
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>A concise overview of my background, strengths, and technical focus.</p>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Travel Gram</h5>
-          <p class="card-text">Cloud-based travel sharing app using Azure Blob Storage, real-time user feeds, and authentication.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Restaurant Booking System</h5>
-          <p class="card-text">Built with Angular & Flask for secure reservations and admin panel management.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Python Data Manager</h5>
-          <p class="card-text">Console application to manage, analyze and visualize data from text files.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Sports Leaderboard Website</h5>
-          <p class="card-text">Created using HTML, CSS, and jQuery to dynamically display player stats.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Photo Gallery Web App</h5>
-          <p class="card-text">Built with PHP Laravel Breeze, supports commenting and admin controls.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5 class="card-title">Java Desktop Streak Game</h5>
-          <p class="card-text">Single/dual-player mode with high-score tracking and GUI-based gameplay.</p>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card-custom" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-icon"><i class="bi bi-person-workspace"></i></div>
+            <p class="mb-0">
+              First Class Computing Science graduate with hands-on experience in full-stack development and cloud-based systems, gained through industry placements and internships. Strong in Java, Spring Boot, React, Python, and Azure, with proven ability to contribute to real-world software projects, collaborate in Agile teams, and deliver reliable solutions.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Education -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Education</h2>
+        <p>Academic background and key achievements.</p>
+      </div>
+
+      <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-item">
+          <h5>BSc (Hons) Computing Science – First Class</h5>
+          <span class="meta">Ulster University, Belfast | Sep 2021 – Jul 2025</span>
+          <ul class="mb-0">
+            <li>Dean’s List, Faculty of Computing</li>
+            <li>Ulster University Excel Edge Award</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h5>+2 Qualification (Nepal Examination Board)</h5>
+          <span class="meta">2017 – 2020</span>
+          <p class="mb-0">Computer Science (A+), Physics (B+), Chemistry (B), Mathematics (B)</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Experience -->
-<section class="section" id="experience">
-  <div class="container">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>Software Developer & IT Systems Engineer</strong><br>Direct Medics, Belfast (Jul 2023 – Jul 2024)
-        <ul>
-          <li>Designed and maintained web apps, automated workflows.</li>
-          <li>Built and optimized SQL/Azure databases.</li>
-          <li>Led UI/UX improvements across platforms.</li>
-          <li>Deployed software to cloud environments and provided training.</li>
-        </ul>
-      </li>
-      <li><strong>Front of House Manager</strong><br>Yaks Nepalese & Indian Restaurant, Bangor (Oct 2021 – Present)
-        <ul>
-          <li>Led team operations and customer experience efforts.</li>
-          <li>Helped achieve local #1 restaurant ranking.</li>
-        </ul>
-      </li>
-      <li><strong>Computer Science Teacher</strong><br>New Life Boarding Secondary School, Nepal (Dec 2019 – Jun 2021)
-        <ul>
-          <li>Taught computer literacy and organized ICT competitions.</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Experience</h2>
+        <p>Professional experience across software development, systems work, and leadership roles.</p>
+      </div>
 
-<!-- Skills -->
-<section class="section bg-light-blue" id="skills">
-  <div class="container">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Java, Python, JavaScript, PHP, Spring Boot, React.js, Angular, CSS, SQL</li>
-      <li><strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Microservices, Git, GitHub, Postman</li>
-      <li><strong>Tools & Methods:</strong> Full Stack Development, REST APIs, Agile, TDD, VS Code</li>
-      <li><strong>Cybersecurity:</strong> Threat Analysis, Access Control, Systems Security</li>
-      <li><strong>AI & Data:</strong> AI in Python, Data Structures, SQL Analytics, Flask Integration</li>
-      <li><strong>Soft Skills:</strong> Leadership, Teamwork, Communication, Time Management</li>
-    </ul>
-  </div>
-</section>
+      <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-item">
+          <h5>Software Developer Intern</h5>
+          <span class="meta">Perabytes Technologies UK | Present</span>
+          <ul class="experience-list">
+            <li>Assisted in developing and maintaining web-based applications using modern full-stack technologies.</li>
+            <li>Worked on frontend components and backend logic, contributing to feature development and bug fixes.</li>
+            <li>Collaborated with senior developers in an Agile environment, participating in stand-ups and code reviews.</li>
+            <li>Gained exposure to cloud-based deployment workflows, version control, and production-ready coding practices.</li>
+            <li>Strengthened skills in clean code, debugging, and real-world software delivery.</li>
+          </ul>
+        </div>
 
-<!-- Interests -->
-<section class="section" id="interests">
-  <div class="container">
-    <h2>Interests & Achievements</h2>
-    <ul>
-      <li>Competitive cricket player – participated and won in Nepal, active in NI leagues.</li>
-      <li>Volunteered with Direct Medics and Ulster University community programs.</li>
-      <li>Personal tech projects and open-source contributions.</li>
-    </ul>
-  </div>
-</section>
+        <div class="timeline-item">
+          <h5>Software Developer & IT Systems Engineer</h5>
+          <span class="meta">Direct Medics, Belfast, Northern Ireland | Jul 2023 – Jul 2024</span>
+          <ul class="experience-list">
+            <li>Designed, developed, and maintained web applications and automation tools.</li>
+            <li>Built and optimized backend databases (SQL, Azure) to support digital transformation initiatives.</li>
+            <li>Led UI/UX redesign projects, improving usability and responsiveness across platforms.</li>
+            <li>Deployed software solutions to cloud environments.</li>
+            <li>Authored technical documentation, delivered deployment training, and ensured software reliability through continuous troubleshooting and updates.</li>
+          </ul>
+        </div>
 
-<!-- Contact -->
-<section class="section bg-light-blue" id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p><i class="bi bi-geo-alt"></i>Belfast, Antrim, BT10 0AP</p>
-    <p><i class="bi bi-phone"></i> 07436 598943</p>
-    <p><i class="bi bi-envelope"></i> <a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a></p>
-    <p><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank">LinkedIn Profile</a></p>
-  </div>
-</section>
+        <div class="timeline-item">
+          <h5>Front of House Manager</h5>
+          <span class="meta">Yaks Restaurant, Bangor | Oct 2021 – Jan 2025</span>
+          <ul class="experience-list">
+            <li>Led team operations and customer experience, contributing to the restaurant achieving #1 local ranking.</li>
+          </ul>
+        </div>
 
-<!-- Contact Form -->
-<section class="section bg-light-blue" id="contact-form">
-  <div class="container">
-    <h2>Send Request</h2>
-    <div class="alert alert-success" id="successMsg" style="display:none;">Thank you! Your message has been sent.</div>
-    <form id="contactForm" action="https://formspree.io/f/xpwrrpod" method="POST">
-      <div class="row g-3">
-        <div class="col-md-6">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-        </div>
-        <div class="col-md-6">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-        </div>
-        <div class="col-12">
-          <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-        </div>
-        <div class="col-12">
-          <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-        </div>
-        <input type="hidden" name="_redirect" value="https://antikandel001-prasad-cv-07436598943.vercel.app/thankyou.html">
-        <input type="text" name="_gotcha" style="display:none">
-        <div class="col-12 text-end">
-          <button type="submit" class="btn btn-primary px-4">Send</button>
+        <div class="timeline-item">
+          <h5>Computer Science Teacher</h5>
+          <span class="meta">New Life Boarding Secondary School, Nepal | Dec 2019 – Jun 2021</span>
+          <ul class="experience-list">
+            <li>Delivered foundational computing and digital literacy education through interactive, project-based learning.</li>
+          </ul>
         </div>
       </div>
-    </form>
-  </div>
-</section>
+    </div>
+  </section>
 
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Major Projects</h2>
+        <p>Selected work demonstrating full-stack, cloud, web, and application development skills.</p>
+      </div>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Ankit Prasad Kandel. All rights reserved.</p>
-</footer>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="card-custom project-card">
+            <div class="card-icon"><i class="bi bi-shop-window"></i></div>
+            <h5>Multi-Restaurant Food Delivery System</h5>
+            <p>Full-stack Spring Boot & React application with Google Maps API, PayPal payments, and NGO food-donation integration.</p>
+            <div class="project-tags">
+              <span>Spring Boot</span><span>React</span><span>PayPal</span><span>Google Maps API</span>
+            </div>
+          </div>
+        </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="card-custom project-card">
+            <div class="card-icon"><i class="bi bi-cloud-check"></i></div>
+            <h5>TravelGram</h5>
+            <p>Azure-hosted travel sharing app using Blob Storage, authentication, and real-time content updates.</p>
+            <div class="project-tags">
+              <span>Azure</span><span>Blob Storage</span><span>Authentication</span><span>Cloud App</span>
+            </div>
+          </div>
+        </div>
 
-<!-- AOS Library -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-custom project-card">
+            <div class="card-icon"><i class="bi bi-calendar2-check"></i></div>
+            <h5>Restaurant Booking System</h5>
+            <p>Angular & Flask system with secure authentication and real-time reservation management.</p>
+            <div class="project-tags">
+              <span>Angular</span><span>Flask</span><span>Authentication</span><span>Reservations</span>
+            </div>
+          </div>
+        </div>
 
-<!-- Typed.js Script -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  new Typed('#typed-text', {
-    strings: ['Computing Science Student', 'Software Developer', 'Cloud Enthusiast'],
-    typeSpeed: 60,
-    backSpeed: 40,
-    backDelay: 2000,
-    loop: true
-  });
-</script>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="card-custom project-card">
+            <div class="card-icon"><i class="bi bi-bar-chart-line"></i></div>
+            <h5>Python Data Manager</h5>
+            <p>Python tool for reading, storing, and visualising structured data from text files.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Data Handling</span><span>Visualisation</span>
+            </div>
+          </div>
+        </div>
 
-<!-- Back to Top Button Script -->
-<script>
-  const backToTopBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="card-custom project-card">
+            <div class="card-icon"><i class="bi bi-trophy"></i></div>
+            <h5>Sports Leaderboard Website</h5>
+            <p>Dynamic leaderboard built with HTML, CSS, and jQuery to display live player scores.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>jQuery</span>
+            </div>
+          </div>
+        </div>
 
-<!-- Additional JS for interactivity -->
-<script>
-  const form = document.getElementById('contactForm');
-  const successMsg = document.getElementById('successMsg');
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-custom project-card">
+            <div class="card-icon"><i class="bi bi-images"></i></div>
+            <h5>Photo Gallery Web Application</h5>
+            <p>Laravel-based app supporting user comments and administrative moderation.</p>
+            <div class="project-tags">
+              <span>Laravel</span><span>PHP</span><span>Moderation</span>
+            </div>
+          </div>
+        </div>
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        successMsg.style.display = 'block';
-        form.reset();
-        setTimeout(() => successMsg.style.display = 'none', 5000);
-      } else {
-        alert('Oops! Something went wrong.');
-      }
-    })
-    .catch(error => {
-      alert('Error sending message.');
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="card-custom project-card">
+            <div class="card-icon"><i class="bi bi-controller"></i></div>
+            <h5>Java Desktop Streak Game</h5>
+            <p>Single and multiplayer Java game featuring interactive gameplay and high-score tracking.</p>
+            <div class="project-tags">
+              <span>Java</span><span>Desktop App</span><span>Game Logic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Core technical strengths across languages, frameworks, cloud, tools, and development practices.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card-custom">
+            <h5 class="mb-3">Languages</h5>
+            <span class="skill-badge">Java</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">PHP</span>
+            <span class="skill-badge">SQL</span>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+          <div class="card-custom">
+            <h5 class="mb-3">Frameworks</h5>
+            <span class="skill-badge">Spring Boot</span>
+            <span class="skill-badge">React.js</span>
+            <span class="skill-badge">Angular</span>
+            <span class="skill-badge">Flask</span>
+            <span class="skill-badge">Laravel</span>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card-custom">
+            <h5 class="mb-3">Cloud & DevOps</h5>
+            <span class="skill-badge">Azure</span>
+            <span class="skill-badge">AWS</span>
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">Microservices</span>
+            <span class="skill-badge">Serverless</span>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+          <div class="card-custom">
+            <h5 class="mb-3">Tools & Practices</h5>
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">GitHub</span>
+            <span class="skill-badge">REST APIs</span>
+            <span class="skill-badge">Postman</span>
+            <span class="skill-badge">Agile</span>
+            <span class="skill-badge">TDD</span>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card-custom">
+            <h5 class="mb-3">Security & Networking</h5>
+            <span class="skill-badge">Access Control</span>
+            <span class="skill-badge">Threat Analysis</span>
+            <span class="skill-badge">Network Protocols</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Certifications</h2>
+        <p>Industry-recognised certifications that support my software and cloud profile.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card-custom h-100">
+            <ul class="cert-list mb-0">
+              <li>IBM Full Stack Software Developer</li>
+              <li>Meta Front-End Developer</li>
+              <li>Developing AI Applications with Python and Flask – IBM</li>
+              <li>AWS Cloud Practitioner Essentials – Amazon Web Services</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+          <div class="card-custom h-100">
+            <ul class="cert-list mb-0">
+              <li>Docker Foundations Professional Certificate – Docker</li>
+              <li>Application Development using Microservices and Serverless – IBM</li>
+              <li>Career Essentials – GitHub</li>
+              <li>Advanced Python Projects – AI Applications – LinkedIn Learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests -->
+  <section class="section" id="interests">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Interests & Achievements</h2>
+        <p>Personal achievements and interests that show discipline, teamwork, and initiative.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card-custom text-center h-100">
+            <div class="card-icon mx-auto"><i class="bi bi-trophy-fill"></i></div>
+            <h5>Cricket</h5>
+            <p class="mb-0">Competitive cricket player with wins in Nepal and active participation in NI summer leagues.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="card-custom text-center h-100">
+            <div class="card-icon mx-auto"><i class="bi bi-people-fill"></i></div>
+            <h5>Volunteering</h5>
+            <p class="mb-0">Volunteered with Direct Medics and university-led outreach initiatives.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-custom text-center h-100">
+            <div class="card-icon mx-auto"><i class="bi bi-code-slash"></i></div>
+            <h5>Build & Learn</h5>
+            <p class="mb-0">Build personal projects and contribute to open-source to keep improving technically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Interested in working together or discussing an opportunity? Get in touch.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="glass-card contact-box">
+            <h5 class="mb-4">Contact Information</h5>
+            <div class="info-list">
+              <p><i class="bi bi-geo-alt-fill me-2"></i>Belfast, United Kingdom</p>
+              <p><i class="bi bi-telephone-fill me-2"></i><a href="tel:07436598943">07436 598943</a></p>
+              <p><i class="bi bi-envelope-fill me-2"></i><a href="mailto:akandel599@gmail.com">akandel599@gmail.com</a></p>
+              <p>
+                <i class="bi bi-linkedin me-2"></i>
+                <a href="https://www.linkedin.com/in/ankit-prasad-kandel-494447255/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="glass-card contact-box">
+            <h5 class="mb-4">Send a Message</h5>
+            <form action="https://formspree.io/f/xpwrrpod" method="POST">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="col-12">
+                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                </div>
+                <div class="col-12">
+                  <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+                </div>
+                <input type="hidden" name="_next" value="thankyou.html">
+                <input type="text" name="_gotcha" style="display:none">
+                <div class="col-12 text-end">
+                  <button type="submit" class="btn btn-send">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; 2026 Ankit Prasad Kandel. All rights reserved.</p>
+      <small class="text-white-50">Built with HTML, Bootstrap, JavaScript, and a cleaner professional design.</small>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
     });
-  });
-</script>
+
+    new Typed('#typed-text', {
+      strings: [
+        'Computing Science Graduate',
+        'Software Developer',
+        'Full-Stack Developer',
+        'Cloud-Focused Developer'
+      ],
+      typeSpeed: 55,
+      backSpeed: 35,
+      backDelay: 1800,
+      loop: true
+    });
+
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      backToTopBtn.style.alignItems = 'center';
+      backToTopBtn.style.justifyContent = 'center';
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
