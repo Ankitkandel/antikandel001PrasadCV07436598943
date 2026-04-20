@@ -798,6 +798,57 @@
       background: rgba(255,255,255,0.12);
     }
 
+    .travel-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .travel-image-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .travel-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .travel-card:hover .travel-image {
+      transform: scale(1.08);
+    }
+
+    .travel-content {
+      padding: 14px 14px 16px;
+      text-align: center;
+    }
+
+    .travel-content p {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .travel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-2);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.25s ease;
+    }
+
+    .travel-link:hover {
+      color: var(--accent);
+    }
+
+    .travel-profile-card {
+      text-align: center;
+    }
+
     footer {
       background: rgba(5, 10, 20, 0.92);
       color: #fff;
@@ -894,6 +945,7 @@
             <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
             <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+            <li class="nav-item"><a class="nav-link" href="#travel">Travel</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact-form">Send Request</a></li>
           </ul>
@@ -1300,7 +1352,7 @@
         <div class="timeline-panel" data-aos="fade-up" data-aos-delay="100">
           <div class="timeline">
             <div class="timeline-item">
-              <h5>Perabytes Technologies UK | Software Developer Intern present</h5>
+              <h5>Perabytes Technologies UK | Software Developer Intern | Present</h5>
               <ul>
                 <li>Assisted in developing and maintaining web-based applications using modern full-stack technologies.</li>
                 <li>Worked on frontend components and backend logic, contributing to feature development and bug fixes.</li>
@@ -1322,7 +1374,7 @@
             </div>
 
             <div class="timeline-item">
-              <h5>Front of House Manager, Yaks Restaurant, Bangor (Oct 2021 – jan 2025)</h5>
+              <h5>Front of House Manager, Yaks Restaurant, Bangor (Oct 2021 – Jan 2025)</h5>
               <ul>
                 <li>Led team operations and customer experience, contributing to the restaurant achieving #1 local ranking.</li>
               </ul>
@@ -1434,9 +1486,95 @@
 
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
             <div class="custom-card text-center h-100">
-              <div class="icon-badge mx-auto"><i class="bi bi-github"></i></div>
-              <h5>Build & Contribute</h5>
-              <p class="mb-0">Build personal projects and contribute to open-source.</p>
+              <div class="icon-badge mx-auto"><i class="bi bi-airplane-fill"></i></div>
+              <h5>Travel & Exploration</h5>
+              <p class="mb-0">Passionate traveller who enjoys exploring new places, cultures, and experiences while sharing moments from the journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="travel">
+      <div class="container">
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-kicker">Traveller Life</span>
+          <h2>Travel Gallery</h2>
+          <p>Moments from my journeys, experiences, and places I have explored.</p>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="custom-card travel-profile-card">
+              <div class="icon-badge mx-auto"><i class="bi bi-camera-fill"></i></div>
+              <h5>Follow My Journey</h5>
+              <p class="mb-3">
+                Alongside tech, I enjoy travelling, exploring new places, and capturing moments from the road.
+                You can view more on my Instagram profile.
+              </p>
+              <div class="quick-links justify-content-center">
+                <a href="https://www.instagram.com/ankit__kandel/" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram"></i> @ankit__kandel
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+            <div class="custom-card travel-card h-100">
+              <div class="travel-image-wrap">
+                <img src="images/travel1.jpg" alt="Travel moment 1" class="travel-image">
+              </div>
+              <div class="travel-content">
+                <p>Travel Moment</p>
+                <a class="travel-link" href="https://www.instagram.com/reel/DL4xsnJp58U/" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram"></i> View on Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="custom-card travel-card h-100">
+              <div class="travel-image-wrap">
+                <img src="images/travel2.jpg" alt="Travel moment 2" class="travel-image">
+              </div>
+              <div class="travel-content">
+                <p>Travel Moment</p>
+                <a class="travel-link" href="https://www.instagram.com/reel/DMXurJQN4op/" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram"></i> View on Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="custom-card travel-card h-100">
+              <div class="travel-image-wrap">
+                <img src="images/travel3.jpg" alt="Travel moment 3" class="travel-image">
+              </div>
+              <div class="travel-content">
+                <p>Travel Moment</p>
+                <a class="travel-link" href="https://www.instagram.com/p/DMIWviZtG8Y/" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram"></i> View on Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="custom-card travel-card h-100">
+              <div class="travel-image-wrap">
+                <img src="images/travel4.jpg" alt="Travel moment 4" class="travel-image">
+              </div>
+              <div class="travel-content">
+                <p>Travel Moment</p>
+                <a class="travel-link" href="https://www.instagram.com/p/CI7PCmhJK2H/" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-instagram"></i> View on Instagram
+                </a>
+              </div>
             </div>
           </div>
         </div>
